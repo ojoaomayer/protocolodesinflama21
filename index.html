@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desinflama 21 | Área de Membros - Clínica Ale Zorzan</title>
+    <meta name="description" content="Hub exclusivo de membros do Desinflama 21. Acesse seu protocolo, cardápios, calculadora de hidratação, receitas e suporte da Clínica Ale Zorzan.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface">
+    <!-- App Container -->
+    <div id="app-wrapper" class="app-wrapper">
+        
+        <!-- Top App Bar / Header (Responsive Desktop & Mobile) -->
+        <header class="app-header">
+            <div class="header-inner container">
+                <div class="header-left">
+                    <button id="btn-back" class="btn-icon-back hidden" aria-label="Voltar para o início">
+                        <i data-lucide="arrow-left"></i>
+                        <span>Voltar</span>
+                    </button>
+                    <div class="brand-badge" id="brand-logo-container" onclick="navigateTo('home')">
+                        <span class="brand-pill">DF21</span>
+                        <div class="brand-text-wrap">
+                            <span class="brand-title">Desinflama 21</span>
+                            <span class="brand-subtitle">Clínica Ale Zorzan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="desktop-nav" id="desktop-nav">
+                    <button class="d-nav-item active" onclick="navigateTo('home')" data-nav="home">Início</button>
+                    <button class="d-nav-item" onclick="navigateTo('protocolo')" data-nav="protocolo">Protocolo</button>
+                    <button class="d-nav-item" onclick="navigateTo('cardapio')" data-nav="cardapio">Cardápio</button>
+                    <button class="d-nav-item" onclick="navigateTo('calculadora')" data-nav="calculadora">Métricas</button>
+                    <button class="d-nav-item" onclick="navigateTo('suplementacao')" data-nav="suplementacao">Suplementação</button>
+                    <button class="d-nav-item" onclick="navigateTo('receitas')" data-nav="receitas">Receitas</button>
+                    <button class="d-nav-item" onclick="navigateTo('sintomas')" data-nav="sintomas">Sintomas</button>
+                    <button class="d-nav-item" onclick="navigateTo('mais')" data-nav="mais">Suporte & FAQ</button>
+                </nav>
+
+                <div class="header-right">
+                    <div class="day-badge" id="header-day-badge" title="Seu dia atual na jornada">
+                        <i data-lucide="flame"></i>
+                        <span>Dia <strong id="current-day-label">1</strong>/21</span>
+                    </div>
+                    <button class="btn-theme-toggle" id="btn-toggle-theme" title="Alternar tema suave">
+                        <i data-lucide="sparkles"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area with Views -->
+        <main class="main-content container" id="main-content">
+
+            <!-- ==============================================
+                 1. HOME / DASHBOARD
+            =============================================== -->
+            <section id="view-home" class="view-section active">
+                
+                <!-- Welcome Hero Banner -->
+                <div class="welcome-hero">
+                    <div class="hero-decorative-circle"></div>
+                    <div class="hero-grid-layout">
+                        <div class="user-greeting">
+                            <span class="welcome-tag">✨ Seu Espaço Exclusivo</span>
+                            <h1 class="hero-title">Bem-vindo(a) ao <span class="text-accent">Desinflama 21!</span></h1>
+                            <p class="hero-subtitle">Aqui está tudo o que você precisa para os próximos 21 dias de transformação. Acesse seus materiais, ferramentas e acompanhamento abaixo.</p>
+                            
+                            <!-- Quick Action Shortcut Inside Hero for Desktop -->
+                            <div class="hero-action-buttons">
+                                <button class="btn-hero-primary" onclick="navigateTo('protocolo')">
+                                    <i data-lucide="play-circle"></i>
+                                    <span>Começar pelo Protocolo</span>
+                                </button>
+                                <button class="btn-hero-secondary" onclick="navigateTo('cardapio')">
+                                    <i data-lucide="book-open"></i>
+                                    <span>Ver Cardápio da Semana</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Interactive 21-Day Progress Ribbon -->
+                        <div class="progress-card">
+                            <div class="progress-card-header">
+                                <div>
+                                    <span class="progress-phase-label" id="phase-badge">Semana 1: Desintoxicação</span>
+                                    <h3 class="progress-card-title">Jornada de 21 Dias</h3>
+                                </div>
+                                <span class="progress-percentage" id="progress-percentage-txt">5%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" id="progress-bar-fill" style="width: 5%;"></div>
+                            </div>
+                            <span class="progress-instruction-sub">Clique em um dia para alternar sua fase:</span>
+                            <div class="day-selector-scroll" id="day-selector-scroll">
+                                <!-- Populated dynamically with days 1 to 21 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Action Notification Banner -->
+                <div class="quick-action-banner" onclick="navigateTo('protocolo')">
+                    <div class="qab-icon">
+                        <i data-lucide="compass"></i>
+                    </div>
+                    <div class="qab-text">
+                        <strong>Comece pelo Guia Essencial Oficial</strong>
+                        <span>Entenda a lógica fisiológica dos 21 dias e baixe seu arquivo em PDF</span>
+                    </div>
+                    <button class="btn-qab-action">
+                        <span>Acessar</span>
+                        <i data-lucide="chevron-right" class="qab-arrow"></i>
+                    </button>
+                </div>
+
+                <!-- 7 Core Hub Navigation Grid -->
+                <div class="section-title-wrap">
+                    <div>
+                        <h2 class="section-title">Central de Acesso</h2>
+                        <p class="section-subtext">Navegue pelas 7 seções fundamentais do seu programa</p>
+                    </div>
+                    <span class="section-badge">7 Módulos Disponíveis</span>
+                </div>
+
+                <div class="hub-grid">
+                    <!-- 1. Protocolo -->
+                    <div class="hub-card" onclick="navigateTo('protocolo')">
+                        <div class="hub-card-icon-wrap bg-sage">
+                            <i data-lucide="calendar-check-2"></i>
+                        </div>
+                        <div class="hub-card-info">
+                            <h3 class="hub-card-title">O Protocolo</h3>
+                            <p class="hub-card-desc">As 3 fases essenciais (Desintoxicação, Restauração e Manutenção) e download do guia completo.</p>
+                        </div>
+                        <div class="hub-card-footer">
+                            <span class="hub-link-tag">3 Fases • Guia PDF</span>
+                            <i data-lucide="arrow-right" class="hub-icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- 2. Cardápio -->
+                    <div class="hub-card" onclick="navigateTo('cardapio')">
+                        <div class="hub-card-icon-wrap bg-terracotta">
+                            <i data-lucide="utensils-crossed"></i>
+                        </div>
+                        <div class="hub-card-info">
+                            <h3 class="hub-card-title">Guia Alimentar</h3>
+                            <p class="hub-card-desc">Alimentos permitidos, proibidos, cardápios sugeridos e lista de compras para feira e mercado.</p>
+                        </div>
+                        <div class="hub-card-footer">
+                            <span class="hub-link-tag">Cardápios • Listas</span>
+                            <i data-lucide="arrow-right" class="hub-icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- 3. Calculadora -->
+                    <div class="hub-card" onclick="navigateTo('calculadora')">
+                        <div class="hub-card-icon-wrap bg-gold">
+                            <i data-lucide="calculator"></i>
+                        </div>
+                        <div class="hub-card-info">
+                            <h3 class="hub-card-title">Métricas & Hidratação</h3>
+                            <p class="hub-card-desc">Calcule seu IMC e sua meta diária de água com rastreador interativo de copos diários.</p>
+                        </div>
+                        <div class="hub-card-footer">
+                            <span class="hub-link-tag">IMC • Meta H₂O</span>
+                            <i data-lucide="arrow-right" class="hub-icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- 4. Suplementação -->
+                    <div class="hub-card" onclick="navigateTo('suplementacao')">
+                        <div class="hub-card-icon-wrap bg-teal">
+                            <i data-lucide="sparkle"></i>
+                        </div>
+                        <div class="hub-card-info">
+                            <h3 class="hub-card-title">Apoio & Chás</h3>
+                            <p class="hub-card-desc">Compostos fitoterápicos, própolis, cúrcuma e chás estratégicos para acelerar sua recuperação.</p>
+                        </div>
+                        <div class="hub-card-footer">
+                            <span class="hub-link-tag">Chás • Fitoterapia</span>
+                            <i data-lucide="arrow-right" class="hub-icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- 5. Receitas -->
+                    <div class="hub-card" onclick="navigateTo('receitas')">
+                        <div class="hub-card-icon-wrap bg-rose">
+                            <i data-lucide="chef-hat"></i>
+                        </div>
+                        <div class="hub-card-info">
+                            <h3 class="hub-card-title">Receitas Práticas</h3>
+                            <p class="hub-card-desc">Shots matinais, sucos detox, caldos restauradores e pratos anti-inflamatórios detalhados.</p>
+                        </div>
+                        <div class="hub-card-footer">
+                            <span class="hub-link-tag">Shots • Pratos • Caldos</span>
+                            <i data-lucide="arrow-right" class="hub-icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- 6. Sintomas & Evolução -->
+                    <div class="hub-card" onclick="navigateTo('sintomas')">
+                        <div class="hub-card-icon-wrap bg-purple">
+                            <i data-lucide="activity"></i>
+                        </div>
+                        <div class="hub-card-info">
+                            <h3 class="hub-card-title">Sintomas & Evolução</h3>
+                            <p class="hub-card-desc">Checklist interativo de sono, dores, energia e inchaço para calcular seu índice de bem-estar.</p>
+                        </div>
+                        <div class="hub-card-footer">
+                            <span class="hub-link-tag">Autoavaliação diária</span>
+                            <i data-lucide="arrow-right" class="hub-icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- 7. FAQ & Sobre -->
+                    <div class="hub-card" onclick="navigateTo('mais')">
+                        <div class="hub-card-icon-wrap bg-sage-light">
+                            <i data-lucide="help-circle"></i>
+                        </div>
+                        <div class="hub-card-info">
+                            <h3 class="hub-card-title">Dúvidas & Suporte</h3>
+                            <p class="hub-card-desc">Perguntas frequentes, canal do WhatsApp e autoridade médica da Clínica Ale Zorzan.</p>
+                        </div>
+                        <div class="hub-card-footer">
+                            <span class="hub-link-tag">WhatsApp • Clínica</span>
+                            <i data-lucide="arrow-right" class="hub-icon-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Inspiration Card -->
+                <div class="daily-inspiration-card">
+                    <div class="inspiration-icon">
+                        <i data-lucide="quote"></i>
+                    </div>
+                    <div class="inspiration-body">
+                        <p class="inspiration-quote">"Desinflamar não é apenas sobre o que tiramos do prato, mas sobre a paz, o ritmo e o respeito que devolvemos às nossas células a cada escolha."</p>
+                        <span class="inspiration-author">— Clínica Ale Zorzan • Movimento & Longevidade</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ==============================================
+                 2. PÁGINA: PROTOCOLO
+            =============================================== -->
+            <section id="view-protocolo" class="view-section">
+                <div class="page-header">
+                    <div class="page-header-text">
+                        <span class="page-category">Metodologia Estruturada</span>
+                        <h1 class="page-title">O Protocolo Desinflama 21</h1>
+                        <p class="page-subtitle">Um roteiro passo a passo dividido em 3 semanas estratégicas para desintoxicar, reparar seu trato digestivo e consolidar novos hábitos.</p>
+                    </div>
+                    
+                    <div class="page-header-action">
+                        <button class="btn-action-primary" onclick="simulateDownload('Protocolo_Desinflama21_Completo.pdf')">
+                            <i data-lucide="download"></i>
+                            <span>Baixar Guia Completo (PDF)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Download Callout Banner -->
+                <div class="download-banner-card">
+                    <div class="dbc-left">
+                        <div class="dbc-icon-box">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <div>
+                            <h3 class="dbc-title">Guia Completo Desinflama 21 (Edição Oficial)</h3>
+                            <p class="dbc-desc">Material completo com 38 páginas, rotinas diárias detalhadas, horários sugeridos e cronograma.</p>
+                        </div>
+                    </div>
+                    <button class="btn-action-primary" onclick="simulateDownload('Protocolo_Desinflama21_Completo.pdf')">
+                        <i data-lucide="download"></i>
+                        <span>Baixar PDF</span>
+                    </button>
+                </div>
+
+                <!-- 3 Weeks Phase Grid (Responsive 3 Columns on Desktop) -->
+                <div class="timeline-phases-grid">
+                    
+                    <!-- Semana 1 -->
+                    <div class="phase-card-box">
+                        <div class="phase-box-top bg-sage-light">
+                            <span class="phase-number-tag">Fase 01</span>
+                            <span class="phase-timeframe">Dias 1 a 7</span>
+                        </div>
+                        <div class="phase-card-body">
+                            <h3 class="phase-name">Semana 1: Desintoxicação & Reset</h3>
+                            <p class="phase-description">O objetivo desta primeira semana é desacelerar a sobrecarga hepática e renal, eliminando gatilhos inflamatórios clássicos e ativando a drenagem de toxinas.</p>
+                            
+                            <div class="phase-highlights">
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-sage"></i>
+                                    <span>Remoção estrita de ultraprocessados, açúcares e bebidas alcoólicas</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-sage"></i>
+                                    <span>Introdução dos shots matinais antioxidantes com cúrcuma, limão e própolis</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-sage"></i>
+                                    <span>Alinhamento da hidratação com meta calculada em 35-40ml/kg</span>
+                                </div>
+                            </div>
+                            <div class="phase-tip">
+                                💡 <strong>Dica da Fase 1:</strong> Nos primeiros 3 dias é normal sentir leve dor de cabeça por abstinência de açúcares. Beba bastante água e respeite o descanso!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Semana 2 -->
+                    <div class="phase-card-box">
+                        <div class="phase-box-top bg-terracotta-light">
+                            <span class="phase-number-tag">Fase 02</span>
+                            <span class="phase-timeframe">Dias 8 a 14</span>
+                        </div>
+                        <div class="phase-card-body">
+                            <h3 class="phase-name">Semana 2: Restauração & Microbiota</h3>
+                            <p class="phase-description">Com a redução da carga tóxica, focamos na reparação da permeabilidade intestinal, modulação do pH corporal e controle dos níveis de cortisol.</p>
+                            
+                            <div class="phase-highlights">
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-terracotta"></i>
+                                    <span>Aporte abundante de fibras prebióticas e caldos de ossos ricos em colágeno</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-terracotta"></i>
+                                    <span>Inclusão de gorduras nobres protetoras (azeite extravirgem, abacate e sementes)</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-terracotta"></i>
+                                    <span>Práticas de respiração diafragmática para modular o sistema nervoso autônomo</span>
+                                </div>
+                            </div>
+                            <div class="phase-tip">
+                                💡 <strong>Dica da Fase 2:</strong> Note a redução acentuada do estufamento abdominal e a melhora perceptível na qualidade do seu sono profundo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Semana 3 -->
+                    <div class="phase-card-box">
+                        <div class="phase-box-top bg-gold-light">
+                            <span class="phase-number-tag">Fase 03</span>
+                            <span class="phase-timeframe">Dias 15 a 21</span>
+                        </div>
+                        <div class="phase-card-body">
+                            <h3 class="phase-name">Semana 3: Manutenção & Vitalidade</h3>
+                            <p class="phase-description">Consolidação das vias anti-inflamatórias. Você experimentará energia constante sem quedas após almoço, pele mais viçosa e mente focada.</p>
+                            
+                            <div class="phase-highlights">
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-gold"></i>
+                                    <span>Estratégia de reintrodução gradual e consciente de grupos alimentares</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-gold"></i>
+                                    <span>Estruturação do seu plano de longevidade para além dos 21 dias</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i data-lucide="check-circle-2" class="text-gold"></i>
+                                    <span>Mapeamento final da redução de sintomas inflamatórios e dores</span>
+                                </div>
+                            </div>
+                            <div class="phase-tip">
+                                💡 <strong>Dica da Fase 3:</strong> Prepare sua mentalidade. O Desinflama 21 é o divisor de águas para seu novo padrão de saúde a longo prazo.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-action-center">
+                    <button class="btn-return-home" onclick="navigateTo('home')">
+                        <i data-lucide="home"></i>
+                        <span>Voltar ao Painel Principal</span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- ==============================================
+                 3. PÁGINA: CARDÁPIO
+            =============================================== -->
+            <section id="view-cardapio" class="view-section">
+                <div class="page-header">
+                    <div class="page-header-text">
+                        <span class="page-category">Nutrição Anti-inflamatória</span>
+                        <h1 class="page-title">Seu Guia Alimentar</h1>
+                        <p class="page-subtitle">A nutrição terapêutica prioriza comida de verdade, densa em fitoquímicos e antioxidantes, excluindo agentes causadores de inflamação subclínica.</p>
+                    </div>
+                </div>
+
+                <!-- Downloadable Food Cards -->
+                <div class="download-grid-pair">
+                    <div class="download-mini-card">
+                        <div class="dmc-top">
+                            <div class="dmc-icon bg-sage-light">
+                                <i data-lucide="calendar"></i>
+                            </div>
+                            <div>
+                                <h4>Cardápio Semanal Sugerido</h4>
+                                <p>Opções completas para café, almoço, lanche e jantar nos 21 dias.</p>
+                            </div>
+                        </div>
+                        <button class="btn-download-pill" onclick="simulateDownload('Cardapio_Semanal_DF21.pdf')">
+                            <i data-lucide="download"></i>
+                            <span>Baixar PDF do Cardápio</span>
+                        </button>
+                    </div>
+
+                    <div class="download-mini-card">
+                        <div class="dmc-top">
+                            <div class="dmc-icon bg-terracotta-light">
+                                <i data-lucide="shopping-cart"></i>
+                            </div>
+                            <div>
+                                <h4>Lista de Compras Inteligente</h4>
+                                <p>Organizada por seções de feira, hortifruti, peixaria e empório natural.</p>
+                            </div>
+                        </div>
+                        <button class="btn-download-pill" onclick="simulateDownload('Lista_de_Compras_DF21.pdf')">
+                            <i data-lucide="download"></i>
+                            <span>Baixar PDF da Lista</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Permitted vs Avoid Food Columns (Side by Side on Desktop) -->
+                <div class="food-columns-wrapper">
+                    
+                    <!-- Permitidos (Verde) -->
+                    <div class="food-column card-permitted">
+                        <div class="food-column-header text-permitted">
+                            <div class="fch-badge bg-permitted-badge">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div>
+                                <h3 class="fch-title">Alimentos Permitidos & Recomendados</h3>
+                                <span class="fch-sub">A base poderosa da sua nutrição celular</span>
+                            </div>
+                        </div>
+
+                        <div class="food-category-group">
+                            <h4 class="category-heading"><i data-lucide="apple"></i> Vegetais & Frutas Antioxidantes</h4>
+                            <ul class="food-item-list">
+                                <li><strong>Vegetais verdes escuros:</strong> Couve, espinafre, rúcula, brócolis, agrião e couve-flor (altas doses de magnésio e sulforafano).</li>
+                                <li><strong>Frutas vermelhas e cítricas:</strong> Morango, mirtilo, amora, limão e laranja com bagaço (ricas em polifenóis).</li>
+                                <li><strong>Tubérculos nutritivos:</strong> Batata doce, abóbora cabotiá, inhame e mandioca em porções equilibradas.</li>
+                            </ul>
+                        </div>
+
+                        <div class="food-category-group">
+                            <h4 class="category-heading"><i data-lucide="beef"></i> Proteínas Nobres & Ovos</h4>
+                            <ul class="food-item-list">
+                                <li><strong>Peixes ricos em ômega-3:</strong> Sardinha, salmão selvagem, atum e tilápia fresca.</li>
+                                <li><strong>Ovos caipiras ou orgânicos:</strong> Excelente fonte de colina, biotina e proteínas completas.</li>
+                                <li><strong>Aves e cortes magros:</strong> Frango caipira, patinho ou filé mignon preparados com temperos naturais.</li>
+                            </ul>
+                        </div>
+
+                        <div class="food-category-group">
+                            <h4 class="category-heading"><i data-lucide="droplet"></i> Gorduras Saudáveis & Especiarias</h4>
+                            <ul class="food-item-list">
+                                <li><strong>Gorduras benéficas:</strong> Azeite extravirgem prensado a frio (acidez ≤ 0.5%), abacate, óleo de coco, castanhas e nozes.</li>
+                                <li><strong>Temperos curativos:</strong> Cúrcuma (açafrão), gengibre fresco, alecrim, orégano, canela do ceilão e alho.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Proibidos (Terracota) -->
+                    <div class="food-column card-prohibited">
+                        <div class="food-column-header text-prohibited">
+                            <div class="fch-badge bg-prohibited-badge">
+                                <i data-lucide="x"></i>
+                            </div>
+                            <div>
+                                <h3 class="fch-title">Alimentos a Evitar nos 21 Dias</h3>
+                                <span class="fch-sub">Gatilhos que acionam inflamações e estresse oxidativo</span>
+                            </div>
+                        </div>
+
+                        <div class="food-category-group">
+                            <h4 class="category-heading"><i data-lucide="ban"></i> Ultraprocessados & Açúcares</h4>
+                            <ul class="food-item-list">
+                                <li><strong>Açúcares refinados:</strong> Açúcar branco, xarope de milho, refrigerantes, sucos de caixinha, bolos e doces convencionais.</li>
+                                <li><strong>Embutidos e industrializados:</strong> Presunto, peito de peru, salsicha, salame, refeições prontas e biscoitos recheados.</li>
+                            </ul>
+                        </div>
+
+                        <div class="food-category-group">
+                            <h4 class="category-heading"><i data-lucide="flame-kindling"></i> Óleos Refinados & Gorduras Trans</h4>
+                            <ul class="food-item-list">
+                                <li><strong>Óleos vegetais de sementes:</strong> Óleo de soja, milho, canola e girassol (elevada concentração de ômega-6 pró-inflamatório).</li>
+                                <li><strong>Gordura vegetal hidrogenada:</strong> Margarinas e frituras de imersão.</li>
+                            </ul>
+                        </div>
+
+                        <div class="food-category-group">
+                            <h4 class="category-heading"><i data-lucide="wine"></i> Bebidas Alcoólicas & Adoçantes Artificiais</h4>
+                            <ul class="food-item-list">
+                                <li><strong>Bebidas alcoólicas:</strong> Cervejas, destilados e vinhos durante o período de reset metabólico.</li>
+                                <li><strong>Adoçantes químicos:</strong> Aspartame, ciclamato e sucralose (podem desequilibrar a microbiota intestinal).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-action-center">
+                    <button class="btn-return-home" onclick="navigateTo('home')">
+                        <i data-lucide="home"></i>
+                        <span>Voltar ao Painel Principal</span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- ==============================================
+                 4. PÁGINA: CALCULADORA DE IMC E HIDRATAÇÃO
+            =============================================== -->
+            <section id="view-calculadora" class="view-section">
+                <div class="page-header">
+                    <div class="page-header-text">
+                        <span class="page-category">Ferramentas de Precisão</span>
+                        <h1 class="page-title">Métricas e Hidratação</h1>
+                        <p class="page-subtitle">Acompanhe seus índices corporais e descubra sua meta de água diária calculada com precisão terapêutica.</p>
+                    </div>
+                </div>
+
+                <!-- Calculator Layout (2 Columns on Desktop) -->
+                <div class="calculator-responsive-layout">
+                    
+                    <!-- Left: Form Inputs -->
+                    <div class="calc-panel-card">
+                        <div class="calc-panel-header">
+                            <i data-lucide="sliders" class="text-sage"></i>
+                            <h3>Insira Seus Dados</h3>
+                        </div>
+                        
+                        <div class="calc-form">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="calc-weight">
+                                        <i data-lucide="scale"></i>
+                                        <span>Seu Peso (kg)</span>
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="calc-weight" placeholder="Ex: 72.5" step="0.1" min="30" max="250" value="70">
+                                        <span class="input-suffix">kg</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="calc-height">
+                                        <i data-lucide="ruler"></i>
+                                        <span>Sua Altura (cm)</span>
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="calc-height" placeholder="Ex: 170" step="1" min="100" max="230" value="168">
+                                        <span class="input-suffix">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="calc-activity">
+                                    <i data-lucide="activity"></i>
+                                    <span>Nível de Atividade / Clima</span>
+                                </label>
+                                <select id="calc-activity" class="custom-select">
+                                    <option value="35">Padrão do Protocolo (35ml por kg)</option>
+                                    <option value="40" selected>Treino Leve / Clima Ameno (40ml por kg)</option>
+                                    <option value="45">Treino Intenso / Clima Quente (45ml por kg)</option>
+                                </select>
+                            </div>
+
+                            <button id="btn-calculate" class="btn-action-primary w-full" onclick="calculateMetrics()">
+                                <i data-lucide="sparkles"></i>
+                                <span>Calcular Minhas Metas</span>
+                            </button>
+                        </div>
+
+                        <!-- Motivational Quote Inside Left Column -->
+                        <div class="quote-card-support mt-4">
+                            <i data-lucide="info"></i>
+                            <p>"A hidratação é o primeiro passo para desinflamar o corpo. A água remove resíduos metabólicos celulares e mantém a integridade da barreira intestinal."</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Dynamic Results & Interactive Tracker -->
+                    <div class="calc-results-panel">
+                        
+                        <div class="results-cards-grid">
+                            <!-- Hydration Result Highlight -->
+                            <div class="result-box hydration-box">
+                                <div class="rb-icon">
+                                    <i data-lucide="droplet"></i>
+                                </div>
+                                <div class="rb-content">
+                                    <span class="rb-label">Sua Meta Diária de Água</span>
+                                    <div class="rb-value">
+                                        <strong id="res-water-liters">2.8</strong>
+                                        <span class="unit">Litros / dia</span>
+                                    </div>
+                                    <div class="rb-sub" id="res-water-glasses">Aprox. 14 copos de 200ml ou 6 garrafas de 500ml</div>
+                                </div>
+                            </div>
+
+                            <!-- IMC Result Highlight -->
+                            <div class="result-box imc-box">
+                                <div class="rb-icon">
+                                    <i data-lucide="heart-pulse"></i>
+                                </div>
+                                <div class="rb-content">
+                                    <span class="rb-label">Índice de Massa Corporal (IMC)</span>
+                                    <div class="rb-value">
+                                        <strong id="res-imc-val">24.8</strong>
+                                        <span class="badge-status" id="res-imc-badge">Peso Adequado</span>
+                                    </div>
+                                    <div class="rb-sub" id="res-imc-desc">Classificação saudável segundo a OMS.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Water Tracker Widget -->
+                        <div class="water-glass-tracker">
+                            <div class="wgt-header">
+                                <div>
+                                    <h4 class="wgt-title">Rastreador de Água de Hoje</h4>
+                                    <span class="wgt-sub">Clique nos copos conforme for bebendo água ao longo do seu dia:</span>
+                                </div>
+                                <button class="btn-text-reset" onclick="resetWaterGlasses()">Zerar Contador</button>
+                            </div>
+
+                            <div class="glasses-grid" id="glasses-grid">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+
+                            <div class="wgt-footer">
+                                <span id="glasses-count-txt">0 de 14 copos bebidos</span>
+                                <span id="glasses-percentage-txt">0%</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bottom-action-center">
+                    <button class="btn-return-home" onclick="navigateTo('home')">
+                        <i data-lucide="home"></i>
+                        <span>Voltar ao Painel Principal</span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- ==============================================
+                 5. PÁGINA: SUPLEMENTAÇÃO
+            =============================================== -->
+            <section id="view-suplementacao" class="view-section">
+                <div class="page-header">
+                    <div class="page-header-text">
+                        <span class="page-category">Fitoterapia & Nutracêuticos</span>
+                        <h1 class="page-title">Apoio Nutricional e Chás</h1>
+                        <p class="page-subtitle">Compostos naturais e infusões botânicas com ação anti-inflamatória e antioxidante comprovada pela ciência para potencializar seus 21 dias.</p>
+                    </div>
+                </div>
+
+                <!-- Medical Disclaimer Alert -->
+                <div class="disclaimer-alert-card">
+                    <div class="dac-icon">
+                        <i data-lucide="shield-alert"></i>
+                    </div>
+                    <div class="dac-text">
+                        <strong>Aviso Importante & Isenção de Responsabilidade</strong>
+                        <p>As orientações abaixo possuem finalidade estritamente educativa. <em>Consulte nossos profissionais de saúde antes de iniciar qualquer suplementação</em>, especialmente em caso de gestação, lactação ou uso de medicações contínuas.</p>
+                    </div>
+                </div>
+
+                <!-- Supplement Cards Grid (Responsive 3 Columns on Desktop) -->
+                <div class="supplements-grid">
+                    
+                    <!-- Cúrcuma -->
+                    <div class="supplement-card">
+                        <div class="supp-tag tag-anti-inflam">Potente Anti-inflamatório</div>
+                        <div class="supp-header">
+                            <div class="supp-icon bg-gold-light">
+                                <i data-lucide="sun"></i>
+                            </div>
+                            <div>
+                                <h3 class="supp-name">Cúrcuma + Piperina</h3>
+                                <span class="supp-active">Curcumina padronizada 95%</span>
+                            </div>
+                        </div>
+                        <p class="supp-desc">Bloqueia a via inflamatória NF-kB, reduzindo dores articulares e marcadores inflamatórios sistêmicos (PCR).</p>
+                        <div class="supp-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
+                                <span class="detail-val">Junto ao almoço ou no shot matinal com azeite/gordura boa.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
+                                <span class="detail-val">Alívio rápido de rigidez e proteção gástrica.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Própolis Verde -->
+                    <div class="supplement-card">
+                        <div class="supp-tag tag-imuno">Imunomodulador</div>
+                        <div class="supp-header">
+                            <div class="supp-icon bg-sage-light">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="supp-name">Extrato de Própolis Verde</h3>
+                                <span class="supp-active">Rico em Artepillin-C</span>
+                            </div>
+                        </div>
+                        <p class="supp-desc">Estimula as defesas naturais, tem ação antimicrobiana suave para o intestino e neutraliza radicais livres.</p>
+                        <div class="supp-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
+                                <span class="detail-val">Em jejum no Shot Matinal ou à noite (15 a 20 gotas).</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
+                                <span class="detail-val">Reforço imunológico e integridade da mucosa digestiva.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ômega 3 -->
+                    <div class="supplement-card">
+                        <div class="supp-tag tag-brain">Cardio & Cognição</div>
+                        <div class="supp-header">
+                            <div class="supp-icon bg-teal-light">
+                                <i data-lucide="waves"></i>
+                            </div>
+                            <div>
+                                <h3 class="supp-name">Ômega-3 (EPA / DHA)</h3>
+                                <span class="supp-active">Óleo de peixe de águas profundas</span>
+                            </div>
+                        </div>
+                        <p class="supp-desc">Substrato para produção de resolvinas e protectinas, moléculas que ativamente "desligam" a inflamação crônica.</p>
+                        <div class="supp-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
+                                <span class="detail-val">Após o jantar ou almoço.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
+                                <span class="detail-val">Saúde cardiovascular, clareza mental e foco.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chá Verde com Limão -->
+                    <div class="supplement-card">
+                        <div class="supp-tag tag-tea">Infusão Termogênica</div>
+                        <div class="supp-header">
+                            <div class="supp-icon bg-sage-light">
+                                <i data-lucide="coffee"></i>
+                            </div>
+                            <div>
+                                <h3 class="supp-name">Chá Verde com Limão</h3>
+                                <span class="supp-active">Camellia Sinensis + EGCG</span>
+                            </div>
+                        </div>
+                        <p class="supp-desc">Rico em epigalocatequina galato (EGCG), estimula a autofagia celular e auxilia na drenagem de líquidos retidos.</p>
+                        <div class="supp-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
+                                <span class="detail-val">Meio da manhã (até as 15h para não afetar o sono).</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
+                                <span class="detail-val">Acelera o metabolismo e reduz inchaço corporal.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chá de Hortelã com Gengibre -->
+                    <div class="supplement-card">
+                        <div class="supp-tag tag-tea">Digestivo & Calmante</div>
+                        <div class="supp-header">
+                            <div class="supp-icon bg-terracotta-light">
+                                <i data-lucide="leaf"></i>
+                            </div>
+                            <div>
+                                <h3 class="supp-name">Chá de Hortelã com Gengibre</h3>
+                                <span class="supp-active">Mentol + Gingerol</span>
+                            </div>
+                        </div>
+                        <p class="supp-desc">Relaxa a musculatura do trato gastrointestinal, aliviando gases, distensão abdominal e desconfortos pós-refeição.</p>
+                        <div class="supp-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
+                                <span class="detail-val">Após o almoço ou no final da tarde.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
+                                <span class="detail-val">Redução imediata de estufamento e alívio digestivo.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Magnésio & Inositol -->
+                    <div class="supplement-card">
+                        <div class="supp-tag tag-sleep">Sono & Relaxamento</div>
+                        <div class="supp-header">
+                            <div class="supp-icon bg-purple-light">
+                                <i data-lucide="moon"></i>
+                            </div>
+                            <div>
+                                <h3 class="supp-name">Magnésio Bisglicinato</h3>
+                                <span class="supp-active">Forma quelada de alta absorção</span>
+                            </div>
+                        </div>
+                        <p class="supp-desc">Participa de mais de 300 reações enzimáticas, modula receptores GABA cerebrais e relaxa as fibras musculares.</p>
+                        <div class="supp-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
+                                <span class="detail-val">30 a 60 minutos antes de dormir.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
+                                <span class="detail-val">Sono profundo reparador e alívio de tensões musculares.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-action-center">
+                    <button class="btn-return-home" onclick="navigateTo('home')">
+                        <i data-lucide="home"></i>
+                        <span>Voltar ao Painel Principal</span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- ==============================================
+                 6. PÁGINA: RECEITAS
+            =============================================== -->
+            <section id="view-receitas" class="view-section">
+                <div class="page-header">
+                    <div class="page-header-text">
+                        <span class="page-category">Culinária Terapêutica</span>
+                        <h1 class="page-title">Receitas Anti-inflamatórias</h1>
+                        <p class="page-subtitle">Pratos práticos, deliciosos e balanceados criados para tornar a sua jornada leve, acolhedora e muito saborosa.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe Filters -->
+                <div class="recipe-filters" id="recipe-filters">
+                    <button class="filter-chip active" data-filter="all">Todas as Receitas</button>
+                    <button class="filter-chip" data-filter="shots">Shots & Sucos</button>
+                    <button class="filter-chip" data-filter="pratos">Pratos Principais</button>
+                    <button class="filter-chip" data-filter="caldos">Caldos & Conforto</button>
+                </div>
+
+                <!-- Recipe Cards Grid (Responsive 3 Columns on Desktop) -->
+                <div class="recipes-grid" id="recipes-grid">
+                    
+                    <!-- Recipe 1: Shot Matinal -->
+                    <div class="recipe-card" data-category="shots" onclick="openRecipeModal(1)">
+                        <div class="recipe-image-wrap bg-gradient-amber">
+                            <div class="recipe-badge">Shot Diário</div>
+                            <div class="recipe-graphic-icon">
+                                <i data-lucide="sparkles"></i>
+                            </div>
+                            <div class="recipe-time-tag"><i data-lucide="clock"></i> 2 min</div>
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-cat-text">Matinal • Imunidade</span>
+                            <h3 class="recipe-title">Shot Matinal da Imunidade</h3>
+                            <p class="recipe-summary">A combinação potente de cúrcuma, limão, gengibre e própolis para ativar enzimas digestivas e desinflamar logo ao acordar.</p>
+                            <div class="recipe-card-footer">
+                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe 2: Suco Verde -->
+                    <div class="recipe-card" data-category="shots" onclick="openRecipeModal(2)">
+                        <div class="recipe-image-wrap bg-gradient-emerald">
+                            <div class="recipe-badge">Detox Intestinal</div>
+                            <div class="recipe-graphic-icon">
+                                <i data-lucide="leaf"></i>
+                            </div>
+                            <div class="recipe-time-tag"><i data-lucide="clock"></i> 5 min</div>
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-cat-text">Bebida • Desintoxicação</span>
+                            <h3 class="recipe-title">Suco Verde Desintoxicante</h3>
+                            <p class="recipe-summary">Couve fresca, pepino, hortelã, maçã verde e água de coco. Rica em fitoquímicos para drenagem de líquidos corporais.</p>
+                            <div class="recipe-card-footer">
+                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe 3: Caldo de Ossos -->
+                    <div class="recipe-card" data-category="caldos" onclick="openRecipeModal(3)">
+                        <div class="recipe-image-wrap bg-gradient-orange">
+                            <div class="recipe-badge">Regeneração Intestinal</div>
+                            <div class="recipe-graphic-icon">
+                                <i data-lucide="soup"></i>
+                            </div>
+                            <div class="recipe-time-tag"><i data-lucide="clock"></i> Cozimento Lento</div>
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-cat-text">Caldo • Colágeno & Glutamina</span>
+                            <h3 class="recipe-title">Caldo de Ossos Restaurador</h3>
+                            <p class="recipe-summary">Rico em colágeno biodisponível, glicina e minerais essenciais para selar e reparar a barreira intestinal permeável.</p>
+                            <div class="recipe-card-footer">
+                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe 4: Jantar Leve -->
+                    <div class="recipe-card" data-category="pratos" onclick="openRecipeModal(4)">
+                        <div class="recipe-image-wrap bg-gradient-rose">
+                            <div class="recipe-badge">Jantar Terapêutico</div>
+                            <div class="recipe-graphic-icon">
+                                <i data-lucide="fish"></i>
+                            </div>
+                            <div class="recipe-time-tag"><i data-lucide="clock"></i> 25 min</div>
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-cat-text">Prato Principal • Ômega-3</span>
+                            <h3 class="recipe-title">Salmão em Crosta de Ervas & Purê Dourado</h3>
+                            <p class="recipe-summary">Salmão grelhado com alecrim e azeite extravirgem acompanhado de purê cremoso de cabotiá com toque de noz-moscada.</p>
+                            <div class="recipe-card-footer">
+                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe 5: Golden Milk -->
+                    <div class="recipe-card" data-category="caldos" onclick="openRecipeModal(5)">
+                        <div class="recipe-image-wrap bg-gradient-gold">
+                            <div class="recipe-badge">Noturno / Conforto</div>
+                            <div class="recipe-graphic-icon">
+                                <i data-lucide="moon"></i>
+                            </div>
+                            <div class="recipe-time-tag"><i data-lucide="clock"></i> 5 min</div>
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-cat-text">Leite Dourado • Relaxante</span>
+                            <h3 class="recipe-title">Creme Dourado (Golden Milk)</h3>
+                            <p class="recipe-summary">Bebida ayurvédica de leite vegetal de coco, cúrcuma, canela, noz-moscada e pimenta preta para induzir o relaxamento profundo.</p>
+                            <div class="recipe-card-footer">
+                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe 6: Salada Detox -->
+                    <div class="recipe-card" data-category="pratos" onclick="openRecipeModal(6)">
+                        <div class="recipe-image-wrap bg-gradient-sage">
+                            <div class="recipe-badge">Almoço Fresco</div>
+                            <div class="recipe-graphic-icon">
+                                <i data-lucide="salad"></i>
+                            </div>
+                            <div class="recipe-time-tag"><i data-lucide="clock"></i> 10 min</div>
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-cat-text">Salada • Fibras Vivas</span>
+                            <h3 class="recipe-title">Salada Anti-inflamatória com Molho Tahine</h3>
+                            <p class="recipe-summary">Mix de folhas verdes, sementes de abóbora tostadas, abacate em cubos, romã e molho cremoso de gergelim (tahine) e limão siciliano.</p>
+                            <div class="recipe-card-footer">
+                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-action-center">
+                    <button class="btn-return-home" onclick="navigateTo('home')">
+                        <i data-lucide="home"></i>
+                        <span>Voltar ao Painel Principal</span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- ==============================================
+                 7. PÁGINA: SINTOMAS E EVOLUÇÃO
+            =============================================== -->
+            <section id="view-sintomas" class="view-section">
+                <div class="page-header">
+                    <div class="page-header-text">
+                        <span class="page-category">Auto-Observação Consciente</span>
+                        <h1 class="page-title">Mapeamento de Sintomas</h1>
+                        <p class="page-subtitle">Monitore como seu corpo reage ao longo dos 21 dias. Observe a redução gradual de inflamações silenciosas e desconfortos.</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Evaluation (Responsive 2 Columns on Desktop) -->
+                <div class="symptom-tracker-layout">
+                    
+                    <!-- Left: Form Checklist -->
+                    <div class="symptom-form-card">
+                        <div class="st-card-intro">
+                            <div class="st-icon-box">
+                                <i data-lucide="clipboard-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="st-title">Checklist de Autoavaliação Diária</h3>
+                                <p class="st-sub">Marque como você está se sentindo hoje:</p>
+                            </div>
+                        </div>
+
+                        <form id="symptom-form" onsubmit="event.preventDefault(); calculateSymptomScore();">
+                            
+                            <!-- 1. Qualidade do Sono -->
+                            <div class="symptom-item-block">
+                                <div class="sib-header">
+                                    <div class="sib-title-wrap">
+                                        <i data-lucide="moon" class="text-purple"></i>
+                                        <div>
+                                            <strong>1. Qualidade do Sono & Repouso</strong>
+                                            <span>Como você acordou hoje pela manhã?</span>
+                                        </div>
+                                    </div>
+                                    <span class="sib-badge" id="lbl-sleep">Ótimo (+3)</span>
+                                </div>
+                                <div class="range-selector">
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_sleep" value="1" onchange="updateSymptomLabels()">
+                                        <span>Cansado / Picado</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_sleep" value="2" onchange="updateSymptomLabels()">
+                                        <span>Razoável</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_sleep" value="3" checked onchange="updateSymptomLabels()">
+                                        <span>Profundo & Reparador</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- 2. Dores Articulares -->
+                            <div class="symptom-item-block">
+                                <div class="sib-header">
+                                    <div class="sib-title-wrap">
+                                        <i data-lucide="bone" class="text-terracotta"></i>
+                                        <div>
+                                            <strong>2. Dores Articulares & Musculares</strong>
+                                            <span>Sensação de rigidez ou pontadas ao se mover</span>
+                                        </div>
+                                    </div>
+                                    <span class="sib-badge" id="lbl-joints">Sem dores (+3)</span>
+                                </div>
+                                <div class="range-selector">
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_joints" value="1" onchange="updateSymptomLabels()">
+                                        <span>Dores incômodas</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_joints" value="2" onchange="updateSymptomLabels()">
+                                        <span>Leve rigidez</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_joints" value="3" checked onchange="updateSymptomLabels()">
+                                        <span>Articulações livres</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- 3. Disposição e Energia -->
+                            <div class="symptom-item-block">
+                                <div class="sib-header">
+                                    <div class="sib-title-wrap">
+                                        <i data-lucide="zap" class="text-gold"></i>
+                                        <div>
+                                            <strong>3. Disposição & Clareza Mental</strong>
+                                            <span>Nível de energia estável sem picos de cansaço</span>
+                                        </div>
+                                    </div>
+                                    <span class="sib-badge" id="lbl-energy">Alta energia (+3)</span>
+                                </div>
+                                <div class="range-selector">
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_energy" value="1" onchange="updateSymptomLabels()">
+                                        <span>Fadiga / Neblina</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_energy" value="2" onchange="updateSymptomLabels()">
+                                        <span>Moderada</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_energy" value="3" checked onchange="updateSymptomLabels()">
+                                        <span>Alta vitalidade & Foco</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- 4. Inchaço Abdominal -->
+                            <div class="symptom-item-block">
+                                <div class="sib-header">
+                                    <div class="sib-title-wrap">
+                                        <i data-lucide="shield" class="text-sage"></i>
+                                        <div>
+                                            <strong>4. Inchaço Abdominal & Digestão</strong>
+                                            <span>Sensação de estufamento pós-refeições</span>
+                                        </div>
+                                    </div>
+                                    <span class="sib-badge" id="lbl-bloating">Barriga leve (+3)</span>
+                                </div>
+                                <div class="range-selector">
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_bloating" value="1" onchange="updateSymptomLabels()">
+                                        <span>Muito inchado</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_bloating" value="2" onchange="updateSymptomLabels()">
+                                        <span>Leve desconforto</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="symp_bloating" value="3" checked onchange="updateSymptomLabels()">
+                                        <span>Abdômen desinchado</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-action-primary w-full mt-4">
+                                <i data-lucide="check-circle-2"></i>
+                                <span>Salvar & Calcular Índice de Bem-Estar</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right: Dynamic Score Gauge & Recommendations -->
+                    <div class="symptom-results-card">
+                        <div class="symptom-score-result" id="symptom-score-result">
+                            <div class="ssr-header">
+                                <div class="ssr-circle-gauge" id="ssr-score-circle">
+                                    <span id="ssr-score-val">100%</span>
+                                </div>
+                                <div class="ssr-text">
+                                    <h4 class="ssr-headline" id="ssr-headline">Excelente Resposta Anti-inflamatória!</h4>
+                                    <p class="ssr-feedback" id="ssr-feedback">Seu corpo está respondendo muito bem ao protocolo. As vias de drenagem celular e o descanso reparador estão ativos.</p>
+                                </div>
+                            </div>
+                            <div class="ssr-history-badge">
+                                <i data-lucide="history"></i>
+                                <span id="ssr-timestamp">Salvo hoje com sucesso no seu dispositivo!</span>
+                            </div>
+                        </div>
+
+                        <div class="symptom-tips-card">
+                            <h4 class="stc-title"><i data-lucide="heart" class="text-terracotta"></i> Como Interpretar Seus Resultados</h4>
+                            <p class="stc-desc">Ao longo dos 21 dias, é esperado que seu índice de bem-estar aumente progressivamente. Pequenas oscilações nos primeiros 3 dias fazem parte da adaptação metabólica.</p>
+                            <ul class="stc-list">
+                                <li><strong>Acima de 80%:</strong> Organismo em ótimo estado anti-inflamatório.</li>
+                                <li><strong>Entre 50% e 79%:</strong> Processo de transição e melhora ativa.</li>
+                                <li><strong>Abaixo de 50%:</strong> Fase de desintoxicação intensa. Reforce a água e o repouso.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-action-center">
+                    <button class="btn-return-home" onclick="navigateTo('home')">
+                        <i data-lucide="home"></i>
+                        <span>Voltar ao Painel Principal</span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- ==============================================
+                 8. PÁGINA: MAIS (FAQ E SOBRE NÓS)
+            =============================================== -->
+            <section id="view-mais" class="view-section">
+                <div class="page-header">
+                    <div class="page-header-text">
+                        <span class="page-category">Cuidado & Esclarecimentos</span>
+                        <h1 class="page-title">Dúvidas e Suporte</h1>
+                        <p class="page-subtitle">Tire suas dúvidas frequentes, fale com nossos especialistas e conheça a base médica da Clínica Ale Zorzan.</p>
+                    </div>
+                </div>
+
+                <!-- 2 Columns Layout on Desktop (Left: WhatsApp & About, Right: FAQ) -->
+                <div class="support-faq-layout">
+                    
+                    <!-- Left Column: WhatsApp CTA & About Clinic -->
+                    <div class="support-left-col">
+                        
+                        <!-- Direct WhatsApp Support Banner -->
+                        <div class="whatsapp-support-card">
+                            <div class="wsc-content">
+                                <div class="wsc-icon bg-whatsapp">
+                                    <i data-lucide="message-circle"></i>
+                                </div>
+                                <div class="wsc-text">
+                                    <h3>Precisa de ajuda individualizada?</h3>
+                                    <p>Nossa equipe médica e nutricional está à disposição para acompanhar seus 21 dias de transformação.</p>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Sou%20aluno(a)%20do%20Desinflama%2021%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-cta">
+                                <i data-lucide="phone-call"></i>
+                                <span>Falar com a Clínica no WhatsApp</span>
+                            </a>
+                        </div>
+
+                        <!-- Section: Quem Somos -->
+                        <div class="about-clinic-card">
+                            <div class="about-clinic-header">
+                                <div class="ach-badge">
+                                    <i data-lucide="award"></i>
+                                    <span>Excelência Médica & Longevidade</span>
+                                </div>
+                                <h2 class="ach-title">Sobre a Clínica Ale Zorzan</h2>
+                            </div>
+                            <div class="about-clinic-body">
+                                <p>A <strong>Clínica Ale Zorzan</strong> nasceu com o compromisso inegociável de integrar a ciência médica de ponta, a fisiologia do movimento e a nutrição anti-inflamatória em um modelo de cuidado humanizado e individualizado.</p>
+                                <p>O programa <strong>Desinflama 21</strong> sintetiza anos de experiência clínica em um método prático e cientificamente validado para devolver o controle da sua saúde celular.</p>
+                                
+                                <div class="clinic-pillars-grid">
+                                    <div class="cp-item">
+                                        <div class="cp-icon bg-sage-light"><i data-lucide="microscope"></i></div>
+                                        <h4>Ciência Aplicada</h4>
+                                        <p>Protocolos orientados por evidências clínicas rigorosas.</p>
+                                    </div>
+                                    <div class="cp-item">
+                                        <div class="cp-icon bg-terracotta-light"><i data-lucide="heart-handshake"></i></div>
+                                        <h4>Cuidado Humanizado</h4>
+                                        <p>Acolhimento empático focado na sua rotina real.</p>
+                                    </div>
+                                    <div class="cp-item">
+                                        <div class="cp-icon bg-gold-light"><i data-lucide="sparkles"></i></div>
+                                        <h4>Longevidade Ativa</h4>
+                                        <p>Vitalidade sustentável para hoje e para o futuro.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: FAQ Accordion -->
+                    <div class="faq-container">
+                        <div class="section-title-wrap">
+                            <div>
+                                <h2 class="section-title">Perguntas Frequentes (FAQ)</h2>
+                                <p class="section-subtext">Respostas diretas para as dúvidas mais comuns dos alunos</p>
+                            </div>
+                            <span class="section-badge">Dúvidas Comuns</span>
+                        </div>
+
+                        <div class="accordion-list">
+                            
+                            <!-- FAQ Item 1 -->
+                            <div class="accordion-item open">
+                                <button class="accordion-header" onclick="toggleAccordion(this)">
+                                    <span class="accordion-q">E se eu sentir dores de cabeça ou cansaço nos primeiros dias?</span>
+                                    <i data-lucide="chevron-down" class="accordion-icon"></i>
+                                </button>
+                                <div class="accordion-body">
+                                    <p>Isso é conhecido como <em>efeito de abstinência e limpeza celular (reação de Herxheimer suave)</em>. Quando você retira açúcares refinados, aditivos químicos e cafeína em excesso, o fígado trabalha intensamente para liberar toxinas acumuladas. Costuma durar de 48 a 72 horas. Aumente a ingestão de água, consuma o shot de limão com cúrcuma e priorize o descanso.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 2 -->
+                            <div class="accordion-item">
+                                <button class="accordion-header" onclick="toggleAccordion(this)">
+                                    <span class="accordion-q">Posso tomar café durante o protocolo Desinflama 21?</span>
+                                    <i data-lucide="chevron-down" class="accordion-icon"></i>
+                                </button>
+                                <div class="accordion-body">
+                                    <p>Sim, mas com moderação estratégica: sugerimos no máximo 1 a 2 xícaras de café coado de boa qualidade (preferencialmente 100% arábica) até as 13h, e <strong>sem adição de açúcar ou adoçantes artificiais</strong>. Se você sofre de gastrite ou ansiedade acentuada, substitua nas primeiras 2 semanas por chá verde ou matchá.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 3 -->
+                            <div class="accordion-item">
+                                <button class="accordion-header" onclick="toggleAccordion(this)">
+                                    <span class="accordion-q">Como falar com os professores e nutricionistas?</span>
+                                    <i data-lucide="chevron-down" class="accordion-icon"></i>
+                                </button>
+                                <div class="accordion-body">
+                                    <p>Você tem canal direto com nosso time através do botão de WhatsApp nesta página, além das sessões de dúvidas com a equipe médica da Clínica Ale Zorzan. Estamos sempre prontos para apoiar seus ajustes individuais.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 4 -->
+                            <div class="accordion-item">
+                                <button class="accordion-header" onclick="toggleAccordion(this)">
+                                    <span class="accordion-q">Posso fazer atividade física durante o programa?</span>
+                                    <i data-lucide="chevron-down" class="accordion-icon"></i>
+                                </button>
+                                <div class="accordion-body">
+                                    <p>Com certeza! Na Semana 1, recomendamos treinos regenerativos, caminhadas ao ar livre, pilates e mobilidade. A partir da Semana 2, com o corpo mais leve e desinflamado, você pode progredir normalmente para musculação e treinos com maior intensidade conforme seu condicionamento.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 5 -->
+                            <div class="accordion-item">
+                                <button class="accordion-header" onclick="toggleAccordion(this)">
+                                    <span class="accordion-q">O que acontece após o término dos 21 dias?</span>
+                                    <i data-lucide="chevron-down" class="accordion-icon"></i>
+                                </button>
+                                <div class="accordion-body">
+                                    <p>Na Semana 3 você receberá o Guia de Manutenção Contínua e Reintrodução Consciente. O Desinflama 21 não é uma dieta restritiva passageira, mas um reset metabólico para você descobrir quais alimentos funcionam melhor com a sua biologia única.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-action-center">
+                    <button class="btn-return-home" onclick="navigateTo('home')">
+                        <i data-lucide="home"></i>
+                        <span>Voltar ao Painel Principal</span>
+                    </button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Floating Quick WhatsApp Button -->
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Sou%20aluno(a)%20do%20Desinflama%2021%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" id="floating-whatsapp" title="Falar com a Clínica no WhatsApp">
+            <i data-lucide="message-circle"></i>
+            <span class="fwa-tooltip">Fale com a Clínica</span>
+        </a>
+
+        <!-- Mobile Bottom Navigation Bar (Visible only on mobile screens) -->
+        <nav class="bottom-nav" id="bottom-nav">
+            <button class="nav-tab active" onclick="navigateTo('home')" data-nav="home">
+                <i data-lucide="layout-grid"></i>
+                <span>Início</span>
+            </button>
+            <button class="nav-tab" onclick="navigateTo('protocolo')" data-nav="protocolo">
+                <i data-lucide="calendar-check-2"></i>
+                <span>Protocolo</span>
+            </button>
+            <button class="nav-tab" onclick="navigateTo('cardapio')" data-nav="cardapio">
+                <i data-lucide="utensils"></i>
+                <span>Cardápio</span>
+            </button>
+            <button class="nav-tab" onclick="navigateTo('calculadora')" data-nav="calculadora">
+                <i data-lucide="calculator"></i>
+                <span>Métricas</span>
+            </button>
+            <button class="nav-tab" onclick="navigateTo('receitas')" data-nav="receitas">
+                <i data-lucide="chef-hat"></i>
+                <span>Receitas</span>
+            </button>
+            <button class="nav-tab" onclick="navigateTo('mais')" data-nav="mais">
+                <i data-lucide="more-horizontal"></i>
+                <span>Mais</span>
+            </button>
+        </nav>
+
+        <!-- Desktop Footer -->
+        <footer class="app-footer">
+            <div class="container footer-inner">
+                <div class="footer-brand">
+                    <span class="brand-pill">DF21</span>
+                    <span class="footer-copy">© 2026 <strong>Desinflama 21</strong> • Clínica Ale Zorzan. Todos os direitos reservados.</span>
+                </div>
+                <div class="footer-links">
+                    <a href="javascript:void(0)" onclick="navigateTo('mais')">Suporte</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('protocolo')">Protocolo</a>
+                    <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ==============================================
+         MODAL: RECEITA DETALHADA
+    =============================================== -->
+    <div class="modal-overlay" id="recipe-modal" onclick="closeRecipeModal(event)">
+        <div class="modal-dialog" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div class="modal-badge" id="modal-recipe-cat">Shot • Imunidade</div>
+                <button class="btn-modal-close" onclick="closeRecipeModalDirect()" aria-label="Fechar receita">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-recipe-body">
+                <!-- Dynamically filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         TOAST NOTIFICATION COMPONENT
+    =============================================== -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Core App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
