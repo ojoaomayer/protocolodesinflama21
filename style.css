@@ -187,13 +187,14 @@ body.soft-dark .app-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 12px;
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .btn-icon-back {
@@ -204,12 +205,14 @@ body.soft-dark .app-header {
     border: 1px solid var(--border-card);
     padding: 6px 12px;
     border-radius: var(--radius-full);
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: 600;
     color: var(--sage-700);
     cursor: pointer;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-fast);
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .btn-icon-back:hover {
@@ -227,6 +230,7 @@ body.soft-dark .app-header {
     gap: 10px;
     cursor: pointer;
     text-decoration: none;
+    flex-shrink: 0;
 }
 
 .brand-pill {
@@ -238,32 +242,37 @@ body.soft-dark .app-header {
     padding: 5px 10px;
     border-radius: var(--radius-sm);
     box-shadow: 0 2px 8px rgba(66, 101, 86, 0.3);
+    flex-shrink: 0;
 }
 
 .brand-text-wrap {
     display: flex;
     flex-direction: column;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .brand-title {
     font-weight: 800;
     font-size: 1.05rem;
-    line-height: 1.1;
+    line-height: 1.15;
     color: var(--text-main);
     letter-spacing: -0.3px;
+    white-space: nowrap;
 }
 
 .brand-subtitle {
     font-size: 0.74rem;
     color: var(--text-muted);
     font-weight: 600;
+    white-space: nowrap;
 }
 
 /* Desktop Navigation Menu Links */
 .desktop-nav {
     display: none;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 @media (min-width: 992px) {
@@ -275,14 +284,26 @@ body.soft-dark .app-header {
 .d-nav-item {
     background: transparent;
     border: none;
-    padding: 8px 14px;
+    padding: 7px 11px;
     border-radius: var(--radius-full);
     font-family: var(--font-sans);
-    font-size: 0.86rem;
+    font-size: 0.83rem;
     font-weight: 600;
     color: var(--text-muted);
     cursor: pointer;
     transition: all var(--transition-fast);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (min-width: 1200px) {
+    .desktop-nav {
+        gap: 6px;
+    }
+    .d-nav-item {
+        padding: 8px 13px;
+        font-size: 0.86rem;
+    }
 }
 
 .d-nav-item:hover {
@@ -304,7 +325,8 @@ body.soft-dark .d-nav-item.active {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    flex-shrink: 0;
 }
 
 .day-badge {
@@ -415,10 +437,23 @@ body.soft-dark .d-nav-item.active {
 
 @media (min-width: 992px) {
     .hero-grid-layout {
-        grid-template-columns: 1.15fr 0.85fr;
+        grid-template-columns: 1fr 340px;
         align-items: center;
         gap: 36px;
     }
+}
+
+@media (min-width: 1200px) {
+    .hero-grid-layout {
+        grid-template-columns: 1fr 350px;
+        gap: 44px;
+    }
+}
+
+.user-greeting {
+    position: relative;
+    z-index: 2;
+    width: 100%;
 }
 
 .welcome-tag {
@@ -436,28 +471,39 @@ body.soft-dark .d-nav-item.active {
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: 1.85rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 10px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
 }
 
 @media (min-width: 768px) {
     .hero-title {
+        font-size: 2.15rem;
+        line-height: 1.22;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-title {
         font-size: 2.35rem;
+        line-height: 1.2;
     }
 }
 
 .hero-title .text-accent {
     color: #F8DC99;
     font-style: italic;
+    font-weight: inherit;
 }
 
 .hero-subtitle {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.5;
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.55;
+    margin-bottom: 22px;
     max-width: 620px;
 }
 
@@ -515,20 +561,29 @@ body.soft-dark .d-nav-item.active {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: var(--radius-lg);
-    padding: 18px 20px;
+    padding: 16px 18px;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .progress-card {
+        padding: 14px 16px;
+        max-width: 340px;
+        justify-self: end;
+    }
 }
 
 .progress-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .progress-phase-label {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     color: #F8DC99;
     font-weight: 700;
     display: block;
@@ -536,22 +591,22 @@ body.soft-dark .d-nav-item.active {
 }
 
 .progress-card-title {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     font-weight: 700;
 }
 
 .progress-percentage {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: #FFFFFF;
 }
 
 .progress-bar-container {
-    height: 8px;
+    height: 7px;
     background: rgba(0, 0, 0, 0.25);
     border-radius: var(--radius-full);
     overflow: hidden;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .progress-bar-fill {
@@ -562,19 +617,66 @@ body.soft-dark .d-nav-item.active {
 }
 
 .progress-instruction-sub {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.78);
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
+}
+
+.day-selector-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.day-nav-arrow {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 0;
+}
+
+.day-nav-arrow i,
+.day-nav-arrow svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 2.5;
+}
+
+.day-nav-arrow:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.32);
+    transform: scale(1.08);
+}
+
+.day-nav-arrow:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.day-nav-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .day-selector-scroll {
+    flex: 1;
     display: flex;
-    gap: 7px;
+    gap: 6px;
     overflow-x: auto;
-    padding: 4px 2px 6px;
+    padding: 2px 2px 4px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 .day-selector-scroll::-webkit-scrollbar {
@@ -582,13 +684,13 @@ body.soft-dark .d-nav-item.active {
 }
 
 .day-bubble {
-    flex: 0 0 34px;
-    height: 34px;
+    flex: 0 0 30px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     font-weight: 700;
     background: rgba(255, 255, 255, 0.15);
     color: rgba(255, 255, 255, 0.85);
@@ -606,7 +708,7 @@ body.soft-dark .d-nav-item.active {
     color: var(--sage-800);
     border-color: #FFFFFF;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .day-bubble.completed {
@@ -1714,14 +1816,17 @@ body.soft-dark .d-nav-item.active {
 
 .supp-tag {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 0.7rem;
+    top: 14px;
+    right: 14px;
+    font-size: 0.64rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
-    padding: 3px 9px;
+    letter-spacing: 0.3px;
+    padding: 2.5px 8px;
     border-radius: var(--radius-full);
+    line-height: 1.2;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .tag-anti-inflam { background: var(--gold-100); color: var(--gold-600); }
@@ -1732,15 +1837,15 @@ body.soft-dark .d-nav-item.active {
 
 .supp-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     margin-bottom: 12px;
-    padding-right: 90px;
+    margin-top: 14px;
 }
 
 .supp-icon {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
@@ -1749,9 +1854,11 @@ body.soft-dark .d-nav-item.active {
 }
 
 .supp-name {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 700;
+    line-height: 1.25;
     color: var(--text-main);
+    margin-bottom: 2px;
 }
 
 .supp-active {

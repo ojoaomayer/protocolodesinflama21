@@ -299,6 +299,7 @@ function renderDayBubbles() {
     }
 
     updateProgressDisplay();
+    setTimeout(() => scrollSelectedDayIntoView(false), 20);
 }
 
 function selectDay(dayNumber) {
@@ -311,6 +312,29 @@ function selectDay(dayNumber) {
     showToast(`📅 Dia ${dayNumber} selecionado: ${phase.name}`);
 }
 
+function changeDay(delta) {
+    const nextDay = appState.currentDay + delta;
+    if (nextDay >= 1 && nextDay <= 21) {
+        selectDay(nextDay);
+    }
+}
+
+function scrollSelectedDayIntoView(smooth = true) {
+    const scrollContainer = document.getElementById('day-selector-scroll');
+    if (!scrollContainer) return;
+    const activeBubble = scrollContainer.querySelector('.day-bubble.active');
+    if (activeBubble) {
+        const containerWidth = scrollContainer.clientWidth;
+        const bubbleLeft = activeBubble.offsetLeft;
+        const bubbleWidth = activeBubble.offsetWidth;
+        const targetScrollLeft = bubbleLeft - (containerWidth / 2) + (bubbleWidth / 2);
+        scrollContainer.scrollTo({
+            left: Math.max(0, targetScrollLeft),
+            behavior: smooth ? 'smooth' : 'auto'
+        });
+    }
+}
+
 function updateProgressDisplay() {
     const percentage = Math.round((appState.currentDay / 21) * 100);
     const phase = getPhaseInfo(appState.currentDay);
@@ -319,11 +343,15 @@ function updateProgressDisplay() {
     const pctTxt = document.getElementById('progress-percentage-txt');
     const phaseBadge = document.getElementById('phase-badge');
     const headerDayLabel = document.getElementById('current-day-label');
+    const prevBtn = document.getElementById('btn-day-prev');
+    const nextBtn = document.getElementById('btn-day-next');
 
     if (fillElem) fillElem.style.width = `${percentage}%`;
     if (pctTxt) pctTxt.textContent = `${percentage}%`;
     if (phaseBadge) phaseBadge.textContent = phase.name;
     if (headerDayLabel) headerDayLabel.textContent = appState.currentDay;
+    if (prevBtn) prevBtn.disabled = appState.currentDay <= 1;
+    if (nextBtn) nextBtn.disabled = appState.currentDay >= 21;
 }
 
 /* ==========================================================================

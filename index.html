@@ -75,7 +75,6 @@
                     <div class="hero-decorative-circle"></div>
                     <div class="hero-grid-layout">
                         <div class="user-greeting">
-                            <span class="welcome-tag">✨ Seu Espaço Exclusivo</span>
                             <h1 class="hero-title">Bem-vindo(a) ao <span class="text-accent">Desinflama 21!</span></h1>
                             <p class="hero-subtitle">Aqui está tudo o que você precisa para os próximos 21 dias de transformação. Acesse seus materiais, ferramentas e acompanhamento abaixo.</p>
                             
@@ -104,9 +103,17 @@
                             <div class="progress-bar-container">
                                 <div class="progress-bar-fill" id="progress-bar-fill" style="width: 5%;"></div>
                             </div>
-                            <span class="progress-instruction-sub">Clique em um dia para alternar sua fase:</span>
-                            <div class="day-selector-scroll" id="day-selector-scroll">
-                                <!-- Populated dynamically with days 1 to 21 -->
+                            <span class="progress-instruction-sub">Clique ou navegue pelas setas para ver os dias:</span>
+                            <div class="day-selector-container">
+                                <button class="day-nav-arrow" id="btn-day-prev" onclick="changeDay(-1)" title="Dia anterior" aria-label="Dia anterior">
+                                    <i data-lucide="chevron-left"></i>
+                                </button>
+                                <div class="day-selector-scroll" id="day-selector-scroll">
+                                    <!-- Populated dynamically with days 1 to 21 -->
+                                </div>
+                                <button class="day-nav-arrow" id="btn-day-next" onclick="changeDay(1)" title="Próximo dia" aria-label="Próximo dia">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -250,7 +257,7 @@
                     </div>
                     <div class="inspiration-body">
                         <p class="inspiration-quote">"Desinflamar não é apenas sobre o que tiramos do prato, mas sobre a paz, o ritmo e o respeito que devolvemos às nossas células a cada escolha."</p>
-                        <span class="inspiration-author">— Clínica Ale Zorzan • Movimento & Longevidade</span>
+                        <span class="inspiration-author">— Ale Zorzan</span>
                     </div>
                 </div>
             </section>
@@ -700,7 +707,7 @@
                     
                     <!-- Cúrcuma -->
                     <div class="supplement-card">
-                        <div class="supp-tag tag-anti-inflam">Potente Anti-inflamatório</div>
+                        <div class="supp-tag tag-anti-inflam">Anti-inflamatório</div>
                         <div class="supp-header">
                             <div class="supp-icon bg-gold-light">
                                 <i data-lucide="sun"></i>
@@ -750,7 +757,7 @@
 
                     <!-- Ômega 3 -->
                     <div class="supplement-card">
-                        <div class="supp-tag tag-brain">Cardio & Cognição</div>
+                        <div class="supp-tag tag-brain">Cardio & Foco</div>
                         <div class="supp-header">
                             <div class="supp-icon bg-teal-light">
                                 <i data-lucide="waves"></i>
@@ -775,7 +782,7 @@
 
                     <!-- Chá Verde com Limão -->
                     <div class="supplement-card">
-                        <div class="supp-tag tag-tea">Infusão Termogênica</div>
+                        <div class="supp-tag tag-tea">Termogênico</div>
                         <div class="supp-header">
                             <div class="supp-icon bg-sage-light">
                                 <i data-lucide="coffee"></i>
@@ -800,7 +807,7 @@
 
                     <!-- Chá de Hortelã com Gengibre -->
                     <div class="supplement-card">
-                        <div class="supp-tag tag-tea">Digestivo & Calmante</div>
+                        <div class="supp-tag tag-tea">Digestivo</div>
                         <div class="supp-header">
                             <div class="supp-icon bg-terracotta-light">
                                 <i data-lucide="leaf"></i>
@@ -825,7 +832,7 @@
 
                     <!-- Magnésio & Inositol -->
                     <div class="supplement-card">
-                        <div class="supp-tag tag-sleep">Sono & Relaxamento</div>
+                        <div class="supp-tag tag-sleep">Sono & Repouso</div>
                         <div class="supp-header">
                             <div class="supp-icon bg-purple-light">
                                 <i data-lucide="moon"></i>
