@@ -2931,7 +2931,18 @@ body.soft-dark .tag-anti-inflam,
 body.soft-dark .bg-sage,
 body.soft-dark .bg-sage-light,
 body.soft-dark .d-nav-item,
-body.soft-dark .hub-card-title,
-body.soft-dark .btn-hero-primary {
+body.soft-dark .hub-card-title {
+    color: var(--text-main);
+}
+
+body.soft-dark .quote-card-support p,
+body.soft-dark .quote-card-support i,
+body.soft-dark .phase-tip,
+body.soft-dark .inspiration-quote,
+body.soft-dark .inspiration-author,
+body.soft-dark .inspiration-icon,
+body.soft-dark .category-heading,
+body.soft-dark .category-heading i,
+body.soft-dark .btn-icon-back {
     color: var(--text-main);
 }
