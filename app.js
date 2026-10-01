@@ -1,5 +1,5 @@
 /**
- * DESINFLAMA 21 - APP LOGIC & STATE MANAGEMENT
+ * DESINFLAMA 21 - APP LOGIC e STATE MANAGEMENT
  * Clínica Ale Zorzan - Área de Membros
  */
 
@@ -18,7 +18,7 @@ const appState = {
 const recipesDB = [
     {
         id: 1,
-        title: "Shot Matinal da Imunidade & Reset Digestivo",
+        title: "Shot Matinal da Imunidade e Reset Digestivo",
         category: "shots",
         catLabel: "Shot Matinal • Anti-inflamatório",
         time: "2 minutos",
@@ -45,7 +45,7 @@ const recipesDB = [
         id: 2,
         title: "Suco Verde Desintoxicante Celular",
         category: "shots",
-        catLabel: "Bebida • Drenagem & Fibras",
+        catLabel: "Bebida • Drenagem e Fibras",
         time: "5 minutos",
         yield: "1 copo grande (300ml)",
         badge: "Detox Intestinal",
@@ -72,7 +72,7 @@ const recipesDB = [
         id: 3,
         title: "Caldo de Ossos Restaurador da Mucosa",
         category: "caldos",
-        catLabel: "Caldo • Colágeno & Barreira Intestinal",
+        catLabel: "Caldo • Colágeno e Barreira Intestinal",
         time: "Cozimento lento (6 a 12h na panela de pressão ou lenta)",
         yield: "Rende 4 a 6 porções de 250ml",
         badge: "Regeneração Intestinal",
@@ -98,7 +98,7 @@ const recipesDB = [
     },
     {
         id: 4,
-        title: "Salmão em Crosta de Ervas & Purê Dourado",
+        title: "Salmão em Crosta de Ervas e Purê Dourado",
         category: "pratos",
         catLabel: "Prato Principal • Ômega-3 Nobre",
         time: "25 minutos",
@@ -127,7 +127,7 @@ const recipesDB = [
         id: 5,
         title: "Creme Dourado Noturno (Golden Milk)",
         category: "caldos",
-        catLabel: "Leite Dourado • Sono & Relaxamento",
+        catLabel: "Leite Dourado • Sono e Relaxamento",
         time: "5 minutos",
         yield: "1 caneca (200ml)",
         badge: "Noturno / Conforto",
@@ -179,12 +179,12 @@ function getPhaseInfo(day) {
     if (day <= 7) {
         return {
             name: "Semana 1: Desintoxicação",
-            desc: "Reset metabólico & limpeza celular"
+            desc: "Reset metabólico e limpeza celular"
         };
     } else if (day <= 14) {
         return {
             name: "Semana 2: Restauração",
-            desc: "Regeneração da microbiota & barreira intestinal"
+            desc: "Regeneração da microbiota e barreira intestinal"
         };
     } else {
         return {
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   NAVIGATION & VIEW ROUTER
+   NAVIGATION e VIEW ROUTER
    ========================================================================== */
 function navigateTo(viewName) {
     // Update active view
@@ -355,7 +355,7 @@ function updateProgressDisplay() {
 }
 
 /* ==========================================================================
-   METRICS & HYDRATION CALCULATOR
+   METRICS e HYDRATION CALCULATOR
    ========================================================================== */
 function calculateMetrics(showToastNotice = true) {
     const weightInput = document.getElementById('calc-weight');
@@ -495,7 +495,7 @@ function resetWaterGlasses() {
 }
 
 /* ==========================================================================
-   RECIPES & MODAL
+   RECIPES e MODAL
    ========================================================================== */
 function setupRecipeFilters() {
     const chips = document.querySelectorAll('.filter-chip');
@@ -567,7 +567,7 @@ function closeRecipeModalDirect() {
 }
 
 /* ==========================================================================
-   SYMPTOMS & EVOLUTION TRACKER
+   SYMPTOMS e EVOLUTION TRACKER
    ========================================================================== */
 function updateSymptomLabels() {
     const sleep = document.querySelector('input[name="symp_sleep"]:checked')?.value;
@@ -613,7 +613,7 @@ function calculateSymptomScore() {
         feedback.textContent = "Seu organismo está no processo de transição metabólica. Continue firme na hidratação, no shot matinal e no descanso reparador.";
         circleGauge.style.background = "var(--gold-500)";
     } else {
-        headline.textContent = "Fase de Ajuste & Desintoxicação Intensa";
+        headline.textContent = "Fase de Ajuste e Desintoxicação Intensa";
         feedback.textContent = "É natural sentir mais cansaço ou rigidez nos primeiros dias da Semana 1. Beba mais água, descanse e consuma o chá de hortelã com gengibre para acelerar o alívio.";
         circleGauge.style.background = "var(--terracotta-500)";
     }
@@ -642,7 +642,7 @@ function toggleAccordion(button) {
 }
 
 /* ==========================================================================
-   DOWNLOAD SIMULATION & FEEDBACK
+   DOWNLOAD SIMULATION e FEEDBACK
    ========================================================================== */
 function simulateDownload(filename) {
     showToast(`📥 Preparando download de "${filename}"...`);

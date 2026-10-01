@@ -1,7 +1,7 @@
 /* ==========================================================================
-   DESINFLAMA 21 - DESIGN SYSTEM & FULLY RESPONSIVE STYLESHEET
+   DESINFLAMA 21 - DESIGN SYSTEM e FULLY RESPONSIVE STYLESHEET
    Paleta: Verde Sálvia, Bege Acolhedor, Terracota, Dourado Nobre e Branco
-   Estilo: Responsivo Completo (Desktop, Tablet e Mobile), Clean, Saúde & Longevidade
+   Estilo: Responsivo Completo (Desktop, Tablet e Mobile), Clean, Saúde e Longevidade
    ========================================================================== */
 
 :root {
@@ -17,7 +17,7 @@
     --sage-800: #293D35;
     --sage-900: #1B2823;
 
-    /* Tons Neutros Acolhedores: Bege & Areia */
+    /* Tons Neutros Acolhedores: Bege e Areia */
     --cream-50: #FCFBF9;
     --cream-100: #F7F5F0;
     --cream-200: #EFECE3;
@@ -35,7 +35,7 @@
     --terracotta-600: #B85022;
     --terracotta-700: #933E1A;
 
-    /* Acentos Nobres: Dourado & Âmbar */
+    /* Acentos Nobres: Dourado e Âmbar */
     --gold-50: #FEF9EB;
     --gold-100: #FDF1CE;
     --gold-200: #FBE097;
@@ -54,7 +54,7 @@
     --whatsapp-green: #25D366;
     --whatsapp-dark: #128C7E;
 
-    /* Superfícies & Texto Base */
+    /* Superfícies e Texto Base */
     --bg-app: #F9F8F5;
     --bg-card: #FFFFFF;
     --bg-card-subtle: #FDFDFD;
@@ -106,7 +106,7 @@ body.soft-dark {
 }
 
 /* ==========================================================================
-   RESET & BASE STYLES
+   RESET e BASE STYLES
    ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -146,7 +146,7 @@ body {
 }
 
 /* ==========================================================================
-   APP WRAPPER & FULL-WIDTH STRUCTURE
+   APP WRAPPER e FULL-WIDTH STRUCTURE
    ========================================================================== */
 .app-wrapper {
     width: 100%;
@@ -165,7 +165,7 @@ body {
 }
 
 /* ==========================================================================
-   HEADER / TOP NAVBAR (Desktop & Mobile)
+   HEADER / TOP NAVBAR (Desktop e Mobile)
    ========================================================================== */
 .app-header {
     position: sticky;
@@ -368,7 +368,7 @@ body.soft-dark .d-nav-item.active {
 }
 
 /* ==========================================================================
-   MAIN CONTENT & VIEW SWITCHING
+   MAIN CONTENT e VIEW SWITCHING
    ========================================================================== */
 .main-content {
     flex: 1;
@@ -977,7 +977,7 @@ body.soft-dark .d-nav-item.active {
 }
 
 /* ==========================================================================
-   GENERIC PAGE HEADERS & ACTION BUTTONS
+   GENERIC PAGE HEADERS e ACTION BUTTONS
    ========================================================================== */
 .page-header {
     margin-bottom: 24px;
