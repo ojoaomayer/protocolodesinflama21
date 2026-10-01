@@ -401,6 +401,43 @@ function calculateMetrics(showToastNotice = true) {
         imcDesc.textContent = "O protocolo ajudará significativamente a desinflamar o fígado e artérias.";
     }
 
+    // 3. RCQ Calculation: Waist / Hip
+    const waistInput = document.getElementById('calc-waist');
+    const hipInput = document.getElementById('calc-hip');
+    const genderSelect = document.getElementById('calc-gender');
+    
+    if (waistInput && hipInput && waistInput.value && hipInput.value) {
+        const waist = parseFloat(waistInput.value);
+        const hip = parseFloat(hipInput.value);
+        const gender = genderSelect ? genderSelect.value : 'F';
+        
+        if (waist > 0 && hip > 0) {
+            const rcq = (waist / hip).toFixed(2);
+            document.getElementById('res-rcq-val').textContent = rcq;
+            
+            const rcqBadge = document.getElementById('res-rcq-badge');
+            const rcqDesc = document.getElementById('res-rcq-desc');
+            rcqBadge.style.display = 'inline-block';
+            
+            let risk = '';
+            let color = '';
+            
+            if (gender === 'F') {
+                if (rcq <= 0.80) { risk = 'Risco Baixo'; color = 'var(--sage-600)'; }
+                else if (rcq <= 0.85) { risk = 'Risco Moderado'; color = 'var(--gold-500)'; }
+                else { risk = 'Risco Alto'; color = 'var(--terracotta-600)'; }
+            } else {
+                if (rcq <= 0.95) { risk = 'Risco Baixo'; color = 'var(--sage-600)'; }
+                else if (rcq <= 1.00) { risk = 'Risco Moderado'; color = 'var(--gold-500)'; }
+                else { risk = 'Risco Alto'; color = 'var(--terracotta-600)'; }
+            }
+            
+            rcqBadge.textContent = risk;
+            rcqBadge.style.backgroundColor = color;
+            rcqDesc.textContent = "Indicador de risco cardiovascular e metabólico.";
+        }
+    }
+
     // Render interactive water glasses
     renderWaterGlasses();
 
@@ -695,5 +732,55 @@ function loadPersistedState() {
         }
     } catch (e) {
         console.warn("Could not read local storage:", e);
+    }
+    
+    // Load Result Board Data
+    loadResultBoard();
+}
+
+/* ==========================================================================
+   RESULT BOARD (ANTES / DEPOIS)
+   ========================================================================== */
+const resultBoardFields = [
+    'antes-peso', 'antes-cintura', 'antes-abdominal', 'antes-quadril', 'antes-imc', 'antes-rcq',
+    'depois-peso', 'depois-cintura', 'depois-abdominal', 'depois-quadril', 'depois-imc', 'depois-rcq'
+];
+
+function saveResultBoard() {
+    try {
+        const boardData = {};
+        resultBoardFields.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) boardData[id] = el.value;
+        });
+        localStorage.setItem('df21_result_board', JSON.stringify(boardData));
+        
+        // Show saved feedback
+        const feedback = document.getElementById('save-feedback');
+        if (feedback) {
+            feedback.style.opacity = '1';
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+            }, 2500);
+        }
+    } catch (e) {
+        console.warn("Could not save result board:", e);
+    }
+}
+
+function loadResultBoard() {
+    try {
+        const stored = localStorage.getItem('df21_result_board');
+        if (stored) {
+            const boardData = JSON.parse(stored);
+            resultBoardFields.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && boardData[id] !== undefined) {
+                    el.value = boardData[id];
+                }
+            });
+        }
+    } catch (e) {
+        console.warn("Could not load result board:", e);
     }
 }
