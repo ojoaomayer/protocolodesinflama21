@@ -30,7 +30,6 @@
                         <span>Voltar</span>
                     </button>
                     <div class="brand-badge" id="brand-logo-container" onclick="navigateTo('home')">
-                        <span class="brand-pill">DF21</span>
                         <div class="brand-text-wrap">
                             <span class="brand-title">Desinflama 21</span>
                             <span class="brand-subtitle">Clínica Ale Zorzan</span>
@@ -46,6 +45,7 @@
                     <button class="d-nav-item" onclick="navigateTo('calculadora')" data-nav="calculadora">Métricas</button>
                     <button class="d-nav-item" onclick="navigateTo('suplementacao')" data-nav="suplementacao">Suplementação</button>
                     <button class="d-nav-item" onclick="navigateTo('receitas')" data-nav="receitas">Receitas</button>
+                    <button class="d-nav-item" onclick="navigateTo('treinos')" data-nav="treinos">Treinos</button>
                     <button class="d-nav-item" onclick="navigateTo('sintomas')" data-nav="sintomas">Sintomas</button>
                     <button class="d-nav-item" onclick="navigateTo('mais')" data-nav="mais">Suporte & FAQ</button>
                 </nav>
@@ -234,7 +234,22 @@
                         </div>
                     </div>
 
-                    <!-- 7. FAQ & Sobre -->
+                    <!-- 7. Treinos -->
+                    <div class="hub-card" onclick="navigateTo('treinos')">
+                        <div class="hub-card-icon-wrap" style="background-color: var(--sage-700); color: white;">
+                            <i data-lucide="dumbbell"></i>
+                        </div>
+                        <div class="hub-card-info">
+                            <h3 class="hub-card-title">Treinos & Movimento</h3>
+                            <p class="hub-card-desc">Alongamentos, cronograma aeróbico e treinos de força para casa e academia.</p>
+                        </div>
+                        <div class="hub-card-footer">
+                            <span class="hub-link-tag">Casa • Academia</span>
+                            <i data-lucide="arrow-right" class="hub-icon-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- 8. FAQ & Sobre -->
                     <div class="hub-card" onclick="navigateTo('mais')">
                         <div class="hub-card-icon-wrap bg-sage-light">
                             <i data-lucide="help-circle"></i>
@@ -427,10 +442,10 @@
                                 <p>Opções completas para café, almoço, lanche e jantar nos 21 dias.</p>
                             </div>
                         </div>
-                        <button class="btn-download-pill" onclick="simulateDownload('Cardapio_Semanal_DF21.pdf')">
+                        <a href="_Ebook DFL21 Orientação alimentar.pdf.pdf" download class="btn-download-pill" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
                             <i data-lucide="download"></i>
                             <span>Baixar PDF do Cardápio</span>
-                        </button>
+                        </a>
                     </div>
 
                     <div class="download-mini-card">
@@ -443,10 +458,10 @@
                                 <p>Organizada por seções de feira, hortifruti, peixaria e empório natural.</p>
                             </div>
                         </div>
-                        <button class="btn-download-pill" onclick="simulateDownload('Lista_de_Compras_DF21.pdf')">
+                        <a href="Lista_de_Supermercado_Desinflama_21.pdf" download class="btn-download-pill" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
                             <i data-lucide="download"></i>
                             <span>Baixar PDF da Lista</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -531,6 +546,210 @@
 
                 </div>
 
+                <!-- Lista de Compras Extraída -->
+                <div class="shopping-list-full-card" style="background: var(--surface-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem; margin-top: 3rem;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2 style="font-family: var(--font-heading); color: var(--text-primary); font-size: 1.75rem;">Lista de Supermercado - Desinflama 21</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Organize suas compras e facilite seus 21 dias!</p>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                        <!-- Proteínas -->
+                        <div class="food-category-group">
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="beef"></i> PROTEÍNAS</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Peito de frango / sassami</li>
+                                <li>Carne magra: patinho</li>
+                                <li>Coxão mole</li>
+                                <li>Coxão duro</li>
+                                <li>Lagarto</li>
+                                <li>Filé mignon</li>
+                                <li>Ovos</li>
+                                <li>Tilápia</li>
+                                <li>Pescada</li>
+                                <li>Atum</li>
+                                <li>Salmão</li>
+                                <li>Sardinha</li>
+                                <li>Outros frutos do mar</li>
+                                <li>Tofu</li>
+                            </ul>
+                        </div>
+
+                        <!-- Verduras e Legumes -->
+                        <div class="food-category-group">
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="leaf"></i> VERDURAS E LEGUMES</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Beterraba</li>
+                                <li>Cenoura</li>
+                                <li>Berinjela</li>
+                                <li>Cebola</li>
+                                <li>Abobrinha</li>
+                                <li>Tomate / tomate-cereja</li>
+                                <li>Aspargos</li>
+                                <li>Pimentões</li>
+                                <li>Brócolis</li>
+                                <li>Couve-flor</li>
+                                <li>Aipo</li>
+                                <li>Pepino</li>
+                                <li>Palmito</li>
+                                <li>Vagem</li>
+                                <li>Rabanete</li>
+                                <li>Chuchu</li>
+                                <li>Alcachofra</li>
+                                <li>Alface</li>
+                                <li>Couve</li>
+                                <li>Repolho</li>
+                                <li>Espinafre</li>
+                                <li>Chicória</li>
+                                <li>Rúcula</li>
+                                <li>Outras folhas verdes</li>
+                            </ul>
+                        </div>
+
+                        <!-- Frutas -->
+                        <div class="food-category-group">
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="apple"></i> FRUTAS</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Maçã</li>
+                                <li>Banana não muito madura</li>
+                                <li>Morango</li>
+                                <li>Acerola</li>
+                                <li>Cereja natural</li>
+                                <li>Amora</li>
+                                <li>Framboesa</li>
+                                <li>Uvas</li>
+                                <li>Laranja</li>
+                                <li>Tangerina</li>
+                                <li>Limão</li>
+                                <li>Manga</li>
+                                <li>Melão</li>
+                                <li>Pêssego</li>
+                                <li>Ameixa</li>
+                                <li>Pitanga</li>
+                                <li>Pera</li>
+                                <li>Caqui</li>
+                                <li>Mamão</li>
+                                <li>Melancia</li>
+                                <li>Kiwi</li>
+                                <li>Maracujá</li>
+                            </ul>
+                        </div>
+
+                        <!-- Carboidratos e Leguminosas -->
+                        <div class="food-category-group">
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="wheat"></i> CARBOIDRATOS & LEGUMINOSAS</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Feijão</li>
+                                <li>Grão-de-bico</li>
+                                <li>Lentilha</li>
+                                <li>Ervilha</li>
+                                <li>Soja</li>
+                                <li>Aveia</li>
+                                <li>Batata-doce</li>
+                                <li>Mandioquinha</li>
+                                <li>Arroz integral</li>
+                                <li>Arroz 7 grãos</li>
+                                <li>Quinoa</li>
+                                <li>Inhame</li>
+                                <li>Mandioca</li>
+                                <li>Abóbora</li>
+                            </ul>
+                        </div>
+
+                        <!-- Gorduras Boas -->
+                        <div class="food-category-group">
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="droplet"></i> GORDURAS BOAS</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Abacate</li>
+                                <li>Coco natural</li>
+                                <li>Azeite de oliva</li>
+                                <li>Óleo de coco</li>
+                                <li>Macadâmia</li>
+                                <li>Castanha-do-Pará</li>
+                                <li>Nozes</li>
+                                <li>Pistache</li>
+                                <li>Amêndoas</li>
+                                <li>Chia</li>
+                                <li>Linhaça</li>
+                                <li>Gergelim</li>
+                                <li>Sementes de abóbora</li>
+                                <li>Sementes de girassol</li>
+                                <li>Amendoim — pequena quantidade</li>
+                                <li>Castanha de caju — pequena quantidade</li>
+                            </ul>
+                        </div>
+
+                        <!-- Ervas e Temperos -->
+                        <div class="food-category-group">
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="sprout"></i> ERVAS & TEMPEROS NATURAIS</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Manjericão</li>
+                                <li>Louro</li>
+                                <li>Salsinha</li>
+                                <li>Cebolinha</li>
+                                <li>Alecrim</li>
+                                <li>Tomilho</li>
+                                <li>Hortelã</li>
+                                <li>Orégano</li>
+                                <li>Alho</li>
+                                <li>Gengibre</li>
+                                <li>Noz-moscada</li>
+                                <li>Pimenta</li>
+                                <li>Açafrão</li>
+                                <li>Páprica</li>
+                                <li>Vinagre</li>
+                                <li>Limão</li>
+                            </ul>
+                        </div>
+
+                        <!-- Chás -->
+                        <div class="food-category-group">
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="coffee"></i> CHÁS</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Capim-limão</li>
+                                <li>Chá verde</li>
+                                <li>Camomila</li>
+                                <li>Melissa</li>
+                                <li>Funcho / erva-doce</li>
+                                <li>Hortelã</li>
+                                <li>Gengibre</li>
+                                <li>Alecrim</li>
+                                <li>Maracujá / passiflora</li>
+                            </ul>
+                        </div>
+
+                        <!-- Probióticos & Para Ter em Casa -->
+                        <div class="food-category-group">
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="flask-conical"></i> PROBIÓTICOS (Escolha 1)</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Kefir de água</li>
+                                <li>Kefir de leite</li>
+                                <li>Kombucha</li>
+                                <li>Iogurte natural sem sabor</li>
+                                <li>Probiótico em cápsulas</li>
+                            </ul>
+                            
+                            <h4 class="category-heading" style="color: var(--sage-dark); margin-top: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="home"></i> PARA TER EM CASA</h4>
+                            <ul class="food-item-list" style="list-style-type: square; padding-left: 1.25rem;">
+                                <li>Água</li>
+                                <li>Água com gás</li>
+                                <li>Stevia ou sucralose</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Lembrete -->
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--terracotta-light); border-radius: var(--radius-md); border-left: 4px solid var(--terracotta-dark);">
+                        <h4 style="color: var(--terracotta-dark); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="alert-triangle"></i> LEMBRETE</h4>
+                        <p style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Durante os 21 dias, evite bebidas alcoólicas, refrigerantes e bebidas açucaradas, embutidos, alimentos com glúten, açúcar e doces, temperos prontos, alimentos ultraprocessados, frituras e gorduras trans.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; font-style: italic;">
+                            <strong>Dica:</strong> você não precisa comprar tudo. Escolha os alimentos que mais gosta dentro de cada grupo e varie ao longo dos 21 dias. Deixe frutas, verduras e legumes higienizados e, sempre que possível, prepare as proteínas e porções com antecedência.
+                        </p>
+                    </div>
+                </div>
+
                 <div class="bottom-action-center">
                     <button class="btn-return-home" onclick="navigateTo('home')">
                         <i data-lucide="home"></i>
@@ -586,17 +805,54 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="calc-waist">
+                                        <i data-lucide="scissors"></i>
+                                        <span>Cintura (cm)</span>
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="calc-waist" placeholder="Ex: 80" step="0.1" min="30" max="250">
+                                        <span class="input-suffix">cm</span>
+                                    </div>
+                                </div>
 
-                            <div class="input-group">
-                                <label for="calc-activity">
-                                    <i data-lucide="activity"></i>
-                                    <span>Nível de Atividade / Clima</span>
-                                </label>
-                                <select id="calc-activity" class="custom-select">
-                                    <option value="35">Padrão do Protocolo (35ml por kg)</option>
-                                    <option value="40" selected>Treino Leve / Clima Ameno (40ml por kg)</option>
-                                    <option value="45">Treino Intenso / Clima Quente (45ml por kg)</option>
-                                </select>
+                                <div class="input-group">
+                                    <label for="calc-hip">
+                                        <i data-lucide="move"></i>
+                                        <span>Quadril (cm)</span>
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="calc-hip" placeholder="Ex: 100" step="0.1" min="30" max="300">
+                                        <span class="input-suffix">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="calc-gender">
+                                        <i data-lucide="user"></i>
+                                        <span>Sexo Biológico</span>
+                                    </label>
+                                    <select id="calc-gender" class="custom-select">
+                                        <option value="F" selected>Feminino</option>
+                                        <option value="M">Masculino</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="calc-activity">
+                                        <i data-lucide="activity"></i>
+                                        <span>Atividade / Clima</span>
+                                    </label>
+                                    <select id="calc-activity" class="custom-select">
+                                        <option value="35">Padrão (35ml por kg)</option>
+                                        <option value="40" selected>Treino Leve / Clima Ameno (40ml)</option>
+                                        <option value="45">Treino Intenso / Calor (45ml)</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <button id="btn-calculate" class="btn-action-primary w-full" onclick="calculateMetrics()">
@@ -609,6 +865,39 @@
                         <div class="quote-card-support mt-4">
                             <i data-lucide="info"></i>
                             <p>"A hidratação é o primeiro passo para desinflamar o corpo. A água remove resíduos metabólicos celulares e mantém a integridade da barreira intestinal."</p>
+                        </div>
+                        
+                        <!-- RCQ Info Card -->
+                        <div class="rcq-info-card" style="margin-top: 1.5rem; background: var(--surface-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem;">
+                            <h4 style="font-family: var(--font-heading); color: var(--sage-dark); font-size: 1rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="ruler" style="width: 18px; color: var(--gold-600);"></i> Como medir seu RCQ?</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.4;"><strong>Cintura:</strong> Meça na parte mais estreita do tronco, geralmente 2 dedos acima do umbigo.<br><strong>Quadril:</strong> Meça na parte mais larga da região dos glúteos.</p>
+                            
+                            <table style="width: 100%; font-size: 0.8rem; text-align: left; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid var(--border-color); color: var(--text-primary);">
+                                        <th style="padding: 0.25rem 0;">Risco (OMS)</th>
+                                        <th style="padding: 0.25rem 0;">Mulheres</th>
+                                        <th style="padding: 0.25rem 0;">Homens</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 0.25rem 0; color: var(--sage-700);">Baixo</td>
+                                        <td style="padding: 0.25rem 0; color: var(--text-secondary);">&lt; 0,80</td>
+                                        <td style="padding: 0.25rem 0; color: var(--text-secondary);">&lt; 0,90</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.25rem 0; color: var(--gold-600);">Moderado</td>
+                                        <td style="padding: 0.25rem 0; color: var(--text-secondary);">0,80 - 0,84</td>
+                                        <td style="padding: 0.25rem 0; color: var(--text-secondary);">0,90 - 0,99</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.25rem 0; color: var(--terracotta);">Alto</td>
+                                        <td style="padding: 0.25rem 0; color: var(--text-secondary);">&ge; 0,85</td>
+                                        <td style="padding: 0.25rem 0; color: var(--text-secondary);">&ge; 1,00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -645,6 +934,21 @@
                                     <div class="rb-sub" id="res-imc-desc">Classificação saudável segundo a OMS.</div>
                                 </div>
                             </div>
+
+                            <!-- RCQ Result Highlight -->
+                            <div class="result-box rcq-box">
+                                <div class="rb-icon">
+                                    <i data-lucide="activity"></i>
+                                </div>
+                                <div class="rb-content">
+                                    <span class="rb-label">Relação Cintura-Quadril (RCQ)</span>
+                                    <div class="rb-value">
+                                        <strong id="res-rcq-val">-</strong>
+                                        <span class="badge-status" id="res-rcq-badge" style="display:none;"></span>
+                                    </div>
+                                    <div class="rb-sub" id="res-rcq-desc">Preencha cintura e quadril para calcular.</div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Interactive Water Tracker Widget -->
@@ -667,6 +971,123 @@
                             </div>
                         </div>
 
+                    </div>
+                </div>
+
+                <!-- Quadro do Resultado Final -->
+                <div class="result-board-card" style="margin-top: 3rem; background: var(--surface-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2 style="font-family: var(--font-heading); color: var(--text-primary); font-size: 1.75rem;">Quadro do Resultado Final</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Acompanhe sua evolução salvando suas medidas de antes e depois do programa.</p>
+                        
+                        <div style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color);">
+                            <video controls style="width: 100%; display: block; background: #000;">
+                                <source src="Video antes e depois.mp4" type="video/mp4">
+                                Seu navegador não suporta a tag de vídeo.
+                            </video>
+                            <div style="background: var(--surface); padding: 1rem; border-top: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                <i data-lucide="camera" style="color: var(--sage-dark);"></i>
+                                <span><strong>Atenção:</strong> Assista ao vídeo para saber como tirar suas fotos corretamente!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                        <!-- Coluna ANTES -->
+                        <div class="board-column" style="background: var(--surface); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                            <h3 style="text-align: center; color: var(--sage-dark); font-size: 1.5rem; margin-bottom: 1.5rem;">ANTES</h3>
+                            
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">Peso (kg)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="antes-peso" placeholder="0.0" onchange="saveResultBoard()">
+                                    <span class="input-suffix">kg</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">Circunf. cintura (cm)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="antes-cintura" placeholder="0.0" onchange="saveResultBoard()">
+                                    <span class="input-suffix">cm</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">Circunf. abdominal (cm)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="antes-abdominal" placeholder="0.0" onchange="saveResultBoard()">
+                                    <span class="input-suffix">cm</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">Circunf. quadril (cm)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="antes-quadril" placeholder="0.0" onchange="saveResultBoard()">
+                                    <span class="input-suffix">cm</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">IMC</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="antes-imc" placeholder="0.0" onchange="saveResultBoard()">
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">RCQ</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="antes-rcq" placeholder="0.0" onchange="saveResultBoard()">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coluna DEPOIS -->
+                        <div class="board-column" style="background: var(--surface); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                            <h3 style="text-align: center; color: var(--sage-dark); font-size: 1.5rem; margin-bottom: 1.5rem;">DEPOIS</h3>
+                            
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">Peso (kg)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="depois-peso" placeholder="0.0" onchange="saveResultBoard()">
+                                    <span class="input-suffix">kg</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">Circunf. cintura (cm)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="depois-cintura" placeholder="0.0" onchange="saveResultBoard()">
+                                    <span class="input-suffix">cm</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">Circunf. abdominal (cm)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="depois-abdominal" placeholder="0.0" onchange="saveResultBoard()">
+                                    <span class="input-suffix">cm</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">Circunf. quadril (cm)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="depois-quadril" placeholder="0.0" onchange="saveResultBoard()">
+                                    <span class="input-suffix">cm</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">IMC</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="depois-imc" placeholder="0.0" onchange="saveResultBoard()">
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 1rem;">
+                                <label style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: block;">RCQ</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="depois-rcq" placeholder="0.0" onchange="saveResultBoard()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem; min-height: 24px;">
+                        <span id="save-feedback" style="color: var(--sage-dark); font-weight: 600; font-size: 0.95rem; opacity: 0; transition: opacity 0.3s; display: inline-flex; align-items: center; gap: 0.5rem;"><i data-lucide="check-circle" style="width: 18px; height: 18px;"></i> Salvo automaticamente!</span>
                     </div>
                 </div>
 
@@ -884,6 +1305,30 @@
                     <button class="filter-chip" data-filter="shots">Shots & Sucos</button>
                     <button class="filter-chip" data-filter="pratos">Pratos Principais</button>
                     <button class="filter-chip" data-filter="caldos">Caldos & Conforto</button>
+                </div>
+
+                <!-- Bônus Premium: Snacks Saudáveis -->
+                <div class="bonus-ebook-banner" style="background: linear-gradient(135deg, var(--sage-800, #293D35), #111a16); border-radius: var(--radius-xl); padding: 2rem; margin-bottom: 3rem; color: #ffffff !important; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%); border-radius: 50%;"></div>
+                    
+                    <div style="flex: 1; min-width: 300px; z-index: 1;">
+                        <span style="background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Conteúdo Bônus Exclusivo</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.5rem;">E-book: Snacks Saudáveis</h3>
+                        <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1.5rem; line-height: 1.5;">Mais de 15 receitas práticas desenvolvidas pela nutri Ale Zorzan, incluindo opções doces e salgadas para lanches rápidos (chips, empadinhas, doces fit) sem furar o protocolo.</p>
+                        
+                        <a href="#" id="link-bonus-kiwify" target="_blank" style="background: var(--gold-500); color: var(--surface); padding: 0.75rem 1.5rem; border-radius: var(--radius-md); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, box-shadow 0.2s;">
+                            <i data-lucide="lock"></i>
+                            <span>Desbloquear E-book</span>
+                        </a>
+                        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.75rem;">*Após configurar no Kiwify, insira o link no botão acima.</p>
+                    </div>
+                    
+                    <div style="width: 140px; height: 180px; background: white; border-radius: var(--radius-md); transform: rotate(5deg); box-shadow: -5px 10px 20px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--sage-dark); z-index: 1; border: 4px solid white; overflow: hidden; flex-shrink: 0; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 40px; background: var(--gold-500); opacity: 0.2;"></div>
+                        <i data-lucide="book-open" style="width: 48px; height: 48px; margin-bottom: 0.5rem; color: var(--gold-500);"></i>
+                        <span style="font-weight: 800; font-size: 1rem; text-align: center; line-height: 1.1; text-transform: uppercase;">Snacks<br>Saudáveis</span>
+                        <span style="font-size: 0.65rem; opacity: 0.6; margin-top: 0.5rem;">Ale Zorzan</span>
+                    </div>
                 </div>
 
                 <!-- Recipe Cards Grid (Responsive 3 Columns on Desktop) -->
@@ -1352,6 +1797,214 @@
                 </div>
             </section>
 
+            <!-- ==============================================
+                 7. PÁGINA: TREINOS E ALONGAMENTOS
+            =============================================== -->
+            <section id="view-treinos" class="view-section">
+                <div class="page-header">
+                    <div class="page-header-text">
+                        <span class="page-category">Movimento & Energia</span>
+                        <h1 class="page-title">Treinos e Alongamentos</h1>
+                        <p class="page-subtitle">Prepare seu corpo, desinflame e vá mais longe. Escolha seu ambiente de treino e siga os exercícios estruturados do programa.</p>
+                    </div>
+                </div>
+                
+                <!-- CALENDÁRIO DE TREINOS -->
+                <div class="training-calendar-card" style="background: var(--surface-card); border-radius: var(--radius-xl); border: 1px solid var(--border-color); padding: 2rem; margin-bottom: 3rem; text-align: center;">
+                    <h2 style="font-family: var(--font-heading); color: var(--sage-dark); font-size: 1.5rem; margin-bottom: 0.5rem;">Controle de Treino DESINFLAMA 21</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">A primeira semana foca na adaptação com exercícios aeróbicos. A partir da segunda semana, combinamos Força (RML) e Aeróbicos.</p>
+                    
+                    <div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--border-color); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; min-width: 600px;">
+                            <!-- Row 1 -->
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 1</strong><span style="font-size: 1.1rem; color: var(--gold-600);">40'</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 2</strong><span style="font-size: 1.1rem; color: var(--gold-600);">43'</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 3</strong><span style="font-size: 1.1rem; color: var(--gold-600);">45'</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 4</strong><span style="font-size: 1.1rem; color: var(--gold-600);">47'</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 5</strong><span style="font-size: 1.1rem; color: var(--gold-600);">50'</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 6</strong><span style="font-size: 1.1rem; color: var(--gold-600);">50'</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 7</strong><span style="font-size: 1.1rem; color: var(--gold-600);">45'</span></div>
+                            
+                            <!-- Row 2 -->
+                            <div style="background: var(--sage-50); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 8</strong><span style="font-size: 0.95rem; font-weight: 600; color: var(--sage-dark);">RML - sem 2</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 9</strong><span style="font-size: 1.1rem; color: var(--gold-600);">48'</span></div>
+                            <div style="background: var(--sage-50); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 10</strong><span style="font-size: 0.95rem; font-weight: 600; color: var(--sage-dark);">RML - sem 2</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 11</strong><span style="font-size: 1.1rem; color: var(--gold-600);">50'</span></div>
+                            <div style="background: var(--sage-50); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 12</strong><span style="font-size: 0.95rem; font-weight: 600; color: var(--sage-dark);">RML - sem 2</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 13</strong><span style="font-size: 1.1rem; color: var(--gold-600);">55'</span></div>
+                            <div style="background: var(--sage-50); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 14</strong><span style="font-size: 0.95rem; font-weight: 600; color: var(--sage-dark);">RML - sem 2</span></div>
+                            
+                            <!-- Row 3 -->
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 15</strong><span style="font-size: 1.1rem; color: var(--gold-600);">52'</span></div>
+                            <div style="background: var(--sage-50); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 16</strong><span style="font-size: 0.95rem; font-weight: 600; color: var(--sage-dark);">RML - sem 3</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 17</strong><span style="font-size: 1.1rem; color: var(--gold-600);">58'</span></div>
+                            <div style="background: var(--sage-50); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 18</strong><span style="font-size: 0.95rem; font-weight: 600; color: var(--sage-dark);">RML - sem 3</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 19</strong><span style="font-size: 1.1rem; color: var(--gold-600);">40'</span></div>
+                            <div style="background: var(--sage-50); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 20</strong><span style="font-size: 0.95rem; font-weight: 600; color: var(--sage-dark);">RML - sem 3</span></div>
+                            <div style="background: var(--surface); padding: 1rem 0.5rem;"><strong style="display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem;">Dia 21</strong><span style="font-size: 1.1rem; color: var(--gold-600);">50'</span></div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.95rem; color: var(--text-secondary);">
+                        <span style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="dumbbell" style="width: 18px; color: var(--sage-dark);"></i> <strong>RML:</strong> Resistência Muscular Localizada (Treino de Força). Escolha entre Treino em Casa ou na Academia abaixo.</span>
+                        <span style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="timer" style="width: 18px; color: var(--gold-600);"></i> <strong>Ex: 40':</strong> Os números indicam o tempo alvo de treino aeróbico (caminhada/corrida) em minutos.</span>
+                    </div>
+                </div>
+
+                <div class="recipe-filters" style="margin-bottom: 2rem;">
+                    <button class="filter-chip active" onclick="document.getElementById('treino-alongamento').scrollIntoView({behavior: 'smooth'})">Alongamento Diário</button>
+                    <button class="filter-chip" onclick="document.getElementById('treino-casa').scrollIntoView({behavior: 'smooth'})">Treino em Casa</button>
+                    <button class="filter-chip" onclick="document.getElementById('treino-academia').scrollIntoView({behavior: 'smooth'})">Treino na Academia</button>
+                </div>
+
+                <!-- ALONGAMENTO -->
+                <div id="treino-alongamento" class="workout-card" style="background: var(--surface-card); border-radius: var(--radius-xl); border: 1px solid var(--border-color); overflow: hidden; margin-bottom: 3rem;">
+                    <div style="background: var(--sage-700); padding: 2rem; color: white; text-align: center;">
+                        <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;"><i data-lucide="activity"></i> Alongamento Desinflama 21</h2>
+                        <p style="opacity: 0.9;">Antes da caminhada ou para começar bem o dia</p>
+                    </div>
+                    
+                    <div style="padding: 1rem 2rem 0;">
+                        <img src="exercicios/alongamento.jpeg" alt="Ficha de Alongamento" style="width: 100%; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: block;">
+                    </div>
+                    
+                    <div style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div style="background: var(--surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                            <span style="display: inline-block; background: var(--gold-500); color: var(--surface); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 800; margin-bottom: 1rem;">01</span>
+                            <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase;">Panturrilha</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Apoie as mãos na parede, estenda uma perna para trás e mantenha o calcanhar no chão. Sinta o alongamento na panturrilha.</p>
+                        </div>
+                        <div style="background: var(--surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                            <span style="display: inline-block; background: var(--gold-500); color: var(--surface); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 800; margin-bottom: 1rem;">02</span>
+                            <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase;">Posterior da Coxa</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Apoie um pé em um banco ou degrau com a perna estendida. Incline o tronco levemente para frente, mantendo a coluna reta.</p>
+                        </div>
+                        <div style="background: var(--surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                            <span style="display: inline-block; background: var(--gold-500); color: var(--surface); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 800; margin-bottom: 1rem;">03</span>
+                            <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase;">Quadríceps</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Fique em pé, segure um pé com a mão e leve o calcanhar em direção ao glúteo. Mantenha os joelhos juntos e o abdômen contraído.</p>
+                        </div>
+                        <div style="background: var(--surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                            <span style="display: inline-block; background: var(--gold-500); color: var(--surface); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 800; margin-bottom: 1rem;">04</span>
+                            <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase;">Adutores (Interna da Coxa)</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Afaste as pernas, dobre um dos joelhos e mantenha o outro esticado. Apoie as mãos na perna dobrada e leve o quadril para baixo. Sinta o alongamento.</p>
+                        </div>
+                        <div style="background: var(--surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                            <span style="display: inline-block; background: var(--gold-500); color: var(--surface); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 800; margin-bottom: 1rem;">05</span>
+                            <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase;">Braço</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Estenda um braço à frente do corpo, com a outra mão, puxe levemente o cotovelo em direção ao peito. Alongue e troque o lado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TREINO EM CASA -->
+                <div id="treino-casa" class="workout-card" style="background: var(--surface-card); border-radius: var(--radius-xl); border: 1px solid var(--border-color); overflow: hidden; margin-bottom: 3rem;">
+                    <div style="background: #111; padding: 2rem; color: #a4d232; text-align: center;">
+                        <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;"><i data-lucide="home"></i> Treine na Comodidade da Sua Casa</h2>
+                        <div style="display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; color: white;">
+                            <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 8px;"><i data-lucide="check-square"></i> 3 Séries de 15 Repetições</span>
+                            <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 8px;"><i data-lucide="clock"></i> 30 Segundos de Descanso</span>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 1rem 2rem 0;">
+                        <img src="exercicios/treino%20em%20casa.jpeg" alt="Ficha de Treino em Casa" style="width: 100%; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: block;">
+                    </div>
+                    
+                    <div style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">1</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Bíceps c/ 2 garrafinhas</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">2</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Panturrilha no degrau</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">3</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Remada com elástico</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">4</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Peitoral com elástico</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">5</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Desenvolvimento c/ elástico</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">6</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Agachamento c/ elástico</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">7</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Tríceps (cabo ou elástico)</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">8</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Elevação lateral c/ garrafinha</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TREINO ACADEMIA -->
+                <div id="treino-academia" class="workout-card" style="background: var(--surface-card); border-radius: var(--radius-xl); border: 1px solid var(--border-color); overflow: hidden; margin-bottom: 3rem;">
+                    <div style="background: #111; padding: 2rem; color: #a4d232; text-align: center;">
+                        <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;"><i data-lucide="dumbbell"></i> Treino de Musculação na Academia</h2>
+                        <div style="display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; color: white;">
+                            <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 8px;"><i data-lucide="check-square"></i> 3 Séries de 15 Repetições</span>
+                            <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 8px;"><i data-lucide="clock"></i> 30 Segundos de Descanso</span>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 1rem 2rem 0;">
+                        <img src="exercicios/treino%20academia.jpeg" alt="Ficha de Treino Academia" style="width: 100%; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: block;">
+                    </div>
+                    
+                    <div style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">1</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Cadeira Extensora</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">2</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Tríceps Pulley (Barra Reta)</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">3</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Cadeira Flexora Sentada</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">4</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Peck Deck Voador</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">5</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Cadeira Abdutora</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">6</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Bíceps na Polia Baixa</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">7</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Panturrilha Sentada</h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #a4d232; color: #111; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin: 0 auto 1rem;">8</div>
+                            <h4 style="color: var(--text-primary); font-size: 1rem; text-transform: uppercase;">Remada Baixa Triângulo</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-action-center">
+                    <button class="btn-return-home" onclick="navigateTo('home')">
+                        <i data-lucide="home"></i>
+                        <span>Voltar ao Painel Principal</span>
+                    </button>
+                </div>
+            </section>
+
         </main>
 
         <!-- Floating Quick WhatsApp Button -->
@@ -1381,6 +2034,10 @@
             <button class="nav-tab" onclick="navigateTo('receitas')" data-nav="receitas">
                 <i data-lucide="chef-hat"></i>
                 <span>Receitas</span>
+            </button>
+            <button class="nav-tab" onclick="navigateTo('treinos')" data-nav="treinos">
+                <i data-lucide="dumbbell"></i>
+                <span>Treinos</span>
             </button>
             <button class="nav-tab" onclick="navigateTo('mais')" data-nav="mais">
                 <i data-lucide="more-horizontal"></i>
