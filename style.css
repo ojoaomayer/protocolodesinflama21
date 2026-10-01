@@ -91,6 +91,20 @@
 
 /* Modo Alto Contraste Suave / Escuro Relaxante */
 body.soft-dark {
+    --sage-50: #1C2722;
+    --sage-100: #24342D;
+    --cream-50: #1D2A24;
+    --cream-100: #24342D;
+    --terracotta-50: rgba(206, 101, 51, 0.15);
+    --terracotta-100: rgba(206, 101, 51, 0.25);
+    --terracotta-light: rgba(206, 101, 51, 0.15);
+    --gold-50: rgba(200, 141, 12, 0.15);
+    --gold-100: rgba(200, 141, 12, 0.25);
+    --purple-light: rgba(126, 87, 194, 0.15);
+    --teal-light: rgba(0, 137, 123, 0.15);
+    --rose-light: rgba(229, 57, 53, 0.15);
+    --sage-light: rgba(85, 126, 109, 0.15);
+
     --bg-app: #141C18;
     --bg-card: #1D2A24;
     --bg-card-subtle: #24342D;
@@ -2905,3 +2919,19 @@ body.soft-dark .nav-tab.active {
  b o d y . s o f t - d a r k   . i m c - b o x   {   b a c k g r o u n d :   l i n e a r - g r a d i e n t ( 1 3 5 d e g ,   v a r ( - - b g - c a r d )   0 % ,   v a r ( - - b g - c a r d - s u b t l e )   1 0 0 % ) ;   b o r d e r - c o l o r :   v a r ( - - b o r d e r - c a r d ) ;   }  
  
 body.soft-dark .imc-box { background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-subtle) 100%); border-color: var(--border-card); }
+
+body.soft-dark .hydration-box { background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-subtle) 100%); border-color: var(--border-card); }
+body.soft-dark .glass-item { background: var(--bg-card-subtle); border-color: var(--border-subtle); }
+body.soft-dark .symptom-score-result { background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-subtle) 100%); border-color: var(--border-card); }
+
+body.soft-dark .btn-return-home,
+body.soft-dark .btn-download-pill,
+body.soft-dark .tag-imuno,
+body.soft-dark .tag-anti-inflam,
+body.soft-dark .bg-sage,
+body.soft-dark .bg-sage-light,
+body.soft-dark .d-nav-item,
+body.soft-dark .hub-card-title,
+body.soft-dark .btn-hero-primary {
+    color: var(--text-main);
+}
