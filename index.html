@@ -288,28 +288,12 @@
                     </div>
                 </div>
 
-                <!-- Download Callout Banner -->
-                <div class="download-banner-card">
-                    <div class="dbc-left">
-                        <div class="dbc-icon-box">
-                            <i data-lucide="file-text"></i>
-                        </div>
-                        <div>
-                            <h3 class="dbc-title">Guia Completo Desinflama 21 (Edição Oficial)</h3>
-                            <p class="dbc-desc">Material completo com 38 páginas, rotinas diárias detalhadas, horários sugeridos e cronograma.</p>
-                        </div>
-                    </div>
-                    <button class="btn-action-primary" onclick="simulateDownload('Protocolo_Desinflama21_Completo.pdf')">
-                        <i data-lucide="download"></i>
-                        <span>Baixar PDF</span>
-                    </button>
-                </div>
 
                 <!-- 3 Weeks Phase Grid (Responsive 3 Columns on Desktop) -->
                 <div class="timeline-phases-grid">
                     
                     <!-- Semana 1 -->
-                    <div class="phase-card-box">
+                    <div class="phase-card-box" style="margin-bottom: 2rem;">
                         <div class="phase-box-top bg-sage-light">
                             <span class="phase-number-tag">Fase 01</span>
                             <span class="phase-timeframe">Dias 1 a 7</span>
@@ -318,28 +302,43 @@
                             <h3 class="phase-name">Semana 1: Desintoxicação e Reset</h3>
                             <p class="phase-description">O objetivo desta primeira semana é desacelerar a sobrecarga hepática e renal, eliminando gatilhos inflamatórios clássicos e ativando a drenagem de toxinas.</p>
                             
-                            <div class="phase-highlights">
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-sage"></i>
-                                    <span>Remoção estrita de ultraprocessados, açúcares e bebidas alcoólicas</span>
+                            <!-- Subcategorias -->
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--terracotta-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="utensils" style="color: var(--terracotta-main); width: 18px;"></i> Cardápio e Alimentação <a href="javascript:void(0)" onclick="navigateTo('cardapio')" style="font-size: 0.8rem; margin-left: auto; color: var(--terracotta-main); text-decoration: underline; cursor: pointer;">Ver Guia</a></h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• Remoção estrita de ultraprocessados, açúcares e álcool.</li>
+                                        <li>• Introdução obrigatória dos shots matinais antioxidantes (cúrcuma, limão e própolis).</li>
+                                        <li>• Foco total na meta de hidratação (35-40ml/kg).</li>
+                                    </ul>
                                 </div>
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-sage"></i>
-                                    <span>Introdução dos shots matinais antioxidantes com cúrcuma, limão e própolis</span>
+
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--sage-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="dumbbell" style="color: var(--sage-main); width: 18px;"></i> Treinos e Movimento <a href="javascript:void(0)" onclick="navigateTo('treinos')" style="font-size: 0.8rem; margin-left: auto; color: var(--sage-main); text-decoration: underline; cursor: pointer;">Ver Fichas</a></h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• Alongamento diário (matinal ou pré-treino).</li>
+                                        <li>• Caminhadas leves a moderadas (20 a 30 minutos).</li>
+                                        <li>• Exercícios adaptativos de Força (RML) - Semana 1.</li>
+                                    </ul>
                                 </div>
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-sage"></i>
-                                    <span>Alinhamento da hidratação com meta calculada em 35-40ml/kg</span>
+
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--purple-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="activity" style="color: var(--purple-main); width: 18px;"></i> Sintomas e Evolução</h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• <strong>Esperado:</strong> Leve dor de cabeça nos primeiros dias (abstinência de açúcar/café), fadiga inicial e aumento da diurese.</li>
+                                        <li>• <strong>Evolução:</strong> Sensação de desinchaço e redução da retenção de líquidos a partir do dia 4.</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="phase-tip">
-                                💡 <strong>Dica da Fase 1:</strong> Nos primeiros 3 dias é normal sentir leve dor de cabeça por abstinência de açúcares. Beba bastante água e respeite o descanso!
+
+                            <div class="phase-tip" style="margin-top: 1.5rem;">
+                                💡 <strong>Dica da Fase 1:</strong> Beba muita água e respeite o descanso! Se a dor de cabeça for forte, ajuste o sono e não pule refeições.
                             </div>
                         </div>
                     </div>
 
                     <!-- Semana 2 -->
-                    <div class="phase-card-box">
+                    <div class="phase-card-box" style="margin-bottom: 2rem;">
                         <div class="phase-box-top bg-terracotta-light">
                             <span class="phase-number-tag">Fase 02</span>
                             <span class="phase-timeframe">Dias 8 a 14</span>
@@ -348,52 +347,84 @@
                             <h3 class="phase-name">Semana 2: Restauração e Microbiota</h3>
                             <p class="phase-description">Com a redução da carga tóxica, focamos na reparação da permeabilidade intestinal, modulação do pH corporal e controle dos níveis de cortisol.</p>
                             
-                            <div class="phase-highlights">
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-terracotta"></i>
-                                    <span>Aporte abundante de fibras prebióticas e caldos de ossos ricos em colágeno</span>
+                            <!-- Subcategorias -->
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--terracotta-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="utensils" style="color: var(--terracotta-main); width: 18px;"></i> Cardápio e Alimentação <a href="javascript:void(0)" onclick="navigateTo('cardapio')" style="font-size: 0.8rem; margin-left: auto; color: var(--terracotta-main); text-decoration: underline; cursor: pointer;">Ver Guia</a></h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• Aporte abundante de fibras prebióticas (vegetais e folhas).</li>
+                                        <li>• Uso de caldos de ossos ricos em colágeno para selar o intestino.</li>
+                                        <li>• Inclusão de gorduras nobres protetoras (azeite extravirgem, abacate e sementes).</li>
+                                    </ul>
                                 </div>
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-terracotta"></i>
-                                    <span>Inclusão de gorduras nobres protetoras (azeite extravirgem, abacate e sementes)</span>
+
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--sage-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="dumbbell" style="color: var(--sage-main); width: 18px;"></i> Treinos e Movimento <a href="javascript:void(0)" onclick="navigateTo('treinos')" style="font-size: 0.8rem; margin-left: auto; color: var(--sage-main); text-decoration: underline; cursor: pointer;">Ver Fichas</a></h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• Aumento do tempo aeróbico (30 a 40 minutos contínuos).</li>
+                                        <li>• Treinos RML (Resistência Muscular Localizada) mais focados - Semana 2.</li>
+                                        <li>• Práticas de respiração diafragmática para o sistema nervoso.</li>
+                                    </ul>
                                 </div>
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-terracotta"></i>
-                                    <span>Práticas de respiração diafragmática para modular o sistema nervoso autônomo</span>
+
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--purple-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="activity" style="color: var(--purple-main); width: 18px;"></i> Sintomas e Evolução</h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• <strong>Evolução:</strong> Redução drástica do estufamento abdominal (gases diminuem).</li>
+                                        <li>• <strong>Sono:</strong> Melhora perceptível na qualidade do sono profundo (acordar mais descansado).</li>
+                                        <li>• <strong>Energia:</strong> Os picos de cansaço após o almoço começam a desaparecer.</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="phase-tip">
-                                💡 <strong>Dica da Fase 2:</strong> Note a redução acentuada do estufamento abdominal e a melhora perceptível na qualidade do seu sono profundo.
+
+                            <div class="phase-tip" style="margin-top: 1.5rem;">
+                                💡 <strong>Dica da Fase 2:</strong> Preste atenção no funcionamento do seu intestino e na melhora do seu humor. Continue firme nas gorduras boas!
                             </div>
                         </div>
                     </div>
 
                     <!-- Semana 3 -->
-                    <div class="phase-card-box">
+                    <div class="phase-card-box" style="margin-bottom: 2rem;">
                         <div class="phase-box-top bg-gold-light">
                             <span class="phase-number-tag">Fase 03</span>
                             <span class="phase-timeframe">Dias 15 a 21</span>
                         </div>
                         <div class="phase-card-body">
                             <h3 class="phase-name">Semana 3: Manutenção e Vitalidade</h3>
-                            <p class="phase-description">Consolidação das vias anti-inflamatórias. Você experimentará energia constante sem quedas após almoço, pele mais viçosa e mente focada.</p>
+                            <p class="phase-description">Consolidação das vias anti-inflamatórias. Você experimentará energia constante, pele mais viçosa e mente focada.</p>
                             
-                            <div class="phase-highlights">
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-gold"></i>
-                                    <span>Estratégia de reintrodução gradual e consciente de grupos alimentares</span>
+                            <!-- Subcategorias -->
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--terracotta-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="utensils" style="color: var(--terracotta-main); width: 18px;"></i> Cardápio e Alimentação <a href="javascript:void(0)" onclick="navigateTo('cardapio')" style="font-size: 0.8rem; margin-left: auto; color: var(--terracotta-main); text-decoration: underline; cursor: pointer;">Ver Guia</a></h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• Preparação para reintrodução gradual e consciente de alguns grupos alimentares.</li>
+                                        <li>• Consolidação do paladar natural (sem necessidade de excesso de doce/sal).</li>
+                                        <li>• Estruturação do seu plano de longevidade para além dos 21 dias.</li>
+                                    </ul>
                                 </div>
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-gold"></i>
-                                    <span>Estruturação do seu plano de longevidade para além dos 21 dias</span>
+
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--sage-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="dumbbell" style="color: var(--sage-main); width: 18px;"></i> Treinos e Movimento <a href="javascript:void(0)" onclick="navigateTo('treinos')" style="font-size: 0.8rem; margin-left: auto; color: var(--sage-main); text-decoration: underline; cursor: pointer;">Ver Fichas</a></h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• Pico de intensidade no aeróbico (40 a 50 minutos contínuos).</li>
+                                        <li>• Treinos RML (Resistência Muscular Localizada) intensificados - Semana 3.</li>
+                                        <li>• Criação do hábito motor definitivo.</li>
+                                    </ul>
                                 </div>
-                                <div class="highlight-item">
-                                    <i data-lucide="check-circle-2" class="text-gold"></i>
-                                    <span>Mapeamento final da redução de sintomas inflamatórios e dores</span>
+
+                                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--purple-main);">
+                                    <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="activity" style="color: var(--purple-main); width: 18px;"></i> Sintomas e Evolução</h4>
+                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                                        <li>• <strong>Evolução máxima:</strong> Sensação de leveza corporal, pele e cabelos mais saudáveis.</li>
+                                        <li>• <strong>Foco:</strong> Clareza mental e melhoria no foco diário (menos "brain fog").</li>
+                                        <li>• <strong>Dores:</strong> Redução significativa ou desaparecimento de dores articulares e musculares crônicas.</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="phase-tip">
-                                💡 <strong>Dica da Fase 3:</strong> Prepare sua mentalidade. O Desinflama 21 é o divisor de águas para seu novo padrão de saúde a longo prazo.
+
+                            <div class="phase-tip" style="margin-top: 1.5rem;">
+                                💡 <strong>Dica da Fase 3:</strong> Prepare sua mentalidade. O Desinflama 21 é o divisor de águas para seu novo padrão de saúde a longo prazo. Celebre suas vitórias!
                             </div>
                         </div>
                     </div>
@@ -1112,155 +1143,101 @@
                     </div>
                 </div>
 
-                <!-- Supplement Cards Grid (Responsive 3 Columns on Desktop) -->
+                <!-- Supplement Cards Grid -->
                 <div class="supplements-grid">
                     
-                    <!-- Cúrcuma -->
-                    <div class="supplement-card">
-                        <div class="supp-tag tag-anti-inflam">Anti-inflamatório</div>
+                    <!-- Cúrcuma + Piperina Original -->
+                    <div class="supplement-card" style="border-left: 4px solid var(--gold-main);">
+                        <div class="supp-tag tag-anti-inflam">Preparo Caseiro</div>
                         <div class="supp-header">
                             <div class="supp-icon bg-gold-light">
                                 <i data-lucide="sun"></i>
                             </div>
                             <div>
                                 <h3 class="supp-name">Cúrcuma + Piperina</h3>
-                                <span class="supp-active">Curcumina padronizada 95%</span>
+                                <span class="supp-active">Mistura Anti-inflamatória Base</span>
                             </div>
                         </div>
                         <p class="supp-desc">Bloqueia a via inflamatória NF-kB, reduzindo dores articulares e marcadores inflamatórios sistêmicos (PCR).</p>
-                        <div class="supp-details">
+                        
+                        <div style="margin-top: 1.5rem; background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md);">
+                            <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 0.5rem;"><i data-lucide="beaker" style="width:16px; margin-right:4px; vertical-align:text-bottom;"></i> Ingredientes para a Mistura:</strong>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: grid; grid-template-columns: 1fr; gap: 0.4rem;">
+                                <li>• 1 pote de <strong>85g de cúrcuma em pó</strong> (preferencialmente já misturada com pimenta-do-reino/piperina, em proporção de cerca de 5%)</li>
+                                <li>• <strong>4 a 8 colheres de sopa</strong> de óleo de coco extravirgem (ou azeite de oliva / ghee)</li>
+                            </ul>
+                        </div>
+
+                        <div class="supp-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-card);">
                             <div class="detail-row">
                                 <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
-                                <span class="detail-val">Junto ao almoço ou no shot matinal com azeite/gordura boa.</span>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
-                                <span class="detail-val">Alívio rápido de rigidez e proteção gástrica.</span>
+                                <span class="detail-val" style="color: var(--gold-dark); font-weight: 600;">Junto ao almoço ou no shot matinal.</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Própolis Verde -->
-                    <div class="supplement-card">
-                        <div class="supp-tag tag-imuno">Imunomodulador</div>
-                        <div class="supp-header">
-                            <div class="supp-icon bg-sage-light">
-                                <i data-lucide="shield-check"></i>
-                            </div>
-                            <div>
-                                <h3 class="supp-name">Extrato de Própolis Verde</h3>
-                                <span class="supp-active">Rico em Artepillin-C</span>
-                            </div>
-                        </div>
-                        <p class="supp-desc">Estimula as defesas naturais, tem ação antimicrobiana suave para o intestino e neutraliza radicais livres.</p>
-                        <div class="supp-details">
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
-                                <span class="detail-val">Em jejum no Shot Matinal ou à noite (15 a 20 gotas).</span>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
-                                <span class="detail-val">Reforço imunológico e integridade da mucosa digestiva.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ômega 3 -->
-                    <div class="supplement-card">
-                        <div class="supp-tag tag-brain">Cardio e Foco</div>
-                        <div class="supp-header">
-                            <div class="supp-icon bg-teal-light">
-                                <i data-lucide="waves"></i>
-                            </div>
-                            <div>
-                                <h3 class="supp-name">Ômega-3 (EPA / DHA)</h3>
-                                <span class="supp-active">Óleo de peixe de águas profundas</span>
-                            </div>
-                        </div>
-                        <p class="supp-desc">Substrato para produção de resolvinas e protectinas, moléculas que ativamente "desligam" a inflamação crônica.</p>
-                        <div class="supp-details">
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
-                                <span class="detail-val">Após o jantar ou almoço.</span>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
-                                <span class="detail-val">Saúde cardiovascular, clareza mental e foco.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chá Verde com Limão -->
-                    <div class="supplement-card">
-                        <div class="supp-tag tag-tea">Termogênico</div>
-                        <div class="supp-header">
-                            <div class="supp-icon bg-sage-light">
-                                <i data-lucide="coffee"></i>
-                            </div>
-                            <div>
-                                <h3 class="supp-name">Chá Verde com Limão</h3>
-                                <span class="supp-active">Camellia Sinensis + EGCG</span>
-                            </div>
-                        </div>
-                        <p class="supp-desc">Rico em epigalocatequina galato (EGCG), estimula a autofagia celular e auxilia na drenagem de líquidos retidos.</p>
-                        <div class="supp-details">
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
-                                <span class="detail-val">Meio da manhã (até as 15h para não afetar o sono).</span>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
-                                <span class="detail-val">Acelera o metabolismo e reduz inchaço corporal.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chá de Hortelã com Gengibre -->
-                    <div class="supplement-card">
-                        <div class="supp-tag tag-tea">Digestivo</div>
+                    <!-- Fórmula Anti-inflamatória -->
+                    <div class="supplement-card" style="border-left: 4px solid var(--terracotta-main);">
+                        <div class="supp-tag tag-anti-inflam">Fórmula Dia</div>
                         <div class="supp-header">
                             <div class="supp-icon bg-terracotta-light">
-                                <i data-lucide="leaf"></i>
+                                <i data-lucide="flame"></i>
                             </div>
                             <div>
-                                <h3 class="supp-name">Chá de Hortelã com Gengibre</h3>
-                                <span class="supp-active">Mentol + Gingerol</span>
+                                <h3 class="supp-name">Redução do Processo Inflamatório</h3>
+                                <span class="supp-active">Ação antioxidante e sistêmica</span>
                             </div>
                         </div>
-                        <p class="supp-desc">Relaxa a musculatura do trato gastrointestinal, aliviando gases, distensão abdominal e desconfortos pós-refeição.</p>
-                        <div class="supp-details">
+                        <p class="supp-desc">Composto focado em bloquear as vias inflamatórias crônicas, melhorar a disposição matinal e combater radicais livres.</p>
+                        
+                        <div style="margin-top: 1.5rem; background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md);">
+                            <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 0.5rem;"><i data-lucide="beaker" style="width:16px; margin-right:4px; vertical-align:text-bottom;"></i> Ativos (Gramagens):</strong>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: grid; grid-template-columns: 1fr; gap: 0.4rem;">
+                                <li>• Vitis vinifera: <strong>250mg</strong></li>
+                                <li>• Cúrcuma: <strong>100mg</strong></li>
+                                <li>• Piperina: <strong>3mg</strong></li>
+                                <li>• Punica granatum: <strong>200mg</strong></li>
+                                <li>• Gengibre: <strong>200mg</strong></li>
+                                <li>• Camelia Sinensis: <strong>300mg</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="supp-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-card);">
                             <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
-                                <span class="detail-val">Após o almoço ou no final da tarde.</span>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
-                                <span class="detail-val">Redução imediata de estufamento e alívio digestivo.</span>
+                                <span class="detail-label"><i data-lucide="clock"></i> Modo de Uso:</span>
+                                <span class="detail-val" style="color: var(--terracotta-dark); font-weight: 600;">Tomar 1 dose pela manhã.</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Magnésio e Inositol -->
-                    <div class="supplement-card">
-                        <div class="supp-tag tag-sleep">Sono e Repouso</div>
+                    <!-- Fórmula do Sono -->
+                    <div class="supplement-card" style="border-left: 4px solid var(--purple-main);">
+                        <div class="supp-tag tag-sleep">Fórmula Noite</div>
                         <div class="supp-header">
                             <div class="supp-icon bg-purple-light">
                                 <i data-lucide="moon"></i>
                             </div>
                             <div>
-                                <h3 class="supp-name">Magnésio Bisglicinato</h3>
-                                <span class="supp-active">Forma quelada de alta absorção</span>
+                                <h3 class="supp-name">Insônia e Sono Não Reparador</h3>
+                                <span class="supp-active">Indução ao sono profundo</span>
                             </div>
                         </div>
-                        <p class="supp-desc">Participa de mais de 300 reações enzimáticas, modula receptores GABA cerebrais e relaxa as fibras musculares.</p>
-                        <div class="supp-details">
+                        <p class="supp-desc">Pool de nutrientes desenhado para modular o ritmo circadiano, relaxar a musculatura e diminuir a atividade cerebral noturna.</p>
+                        
+                        <div style="margin-top: 1.5rem; background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md);">
+                            <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 0.5rem;"><i data-lucide="beaker" style="width:16px; margin-right:4px; vertical-align:text-bottom;"></i> Ativos (Gramagens):</strong>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary); display: grid; grid-template-columns: 1fr; gap: 0.4rem;">
+                                <li>• Melatonina: <strong>0,21mg</strong></li>
+                                <li>• Magnésio treonato: <strong>300mg</strong></li>
+                                <li>• Apigenina: <strong>25mg</strong></li>
+                                <li>• L-Teanina: <strong>200mg</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="supp-details" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-card);">
                             <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="clock"></i> Melhor Momento:</span>
-                                <span class="detail-val">30 a 60 minutos antes de dormir.</span>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-label"><i data-lucide="sparkles"></i> Benefício Chave:</span>
-                                <span class="detail-val">Sono profundo reparador e alívio de tensões musculares.</span>
+                                <span class="detail-label"><i data-lucide="clock"></i> Modo de Uso:</span>
+                                <span class="detail-val" style="color: var(--purple-dark); font-weight: 600;">Tomar 30 minutos antes de dormir.</span>
                             </div>
                         </div>
                     </div>
@@ -1379,62 +1356,7 @@
                         </div>
                     </div>
 
-                    <!-- Recipe 4: Jantar Leve -->
-                    <div class="recipe-card" data-category="pratos" onclick="openRecipeModal(4)">
-                        <div class="recipe-image-wrap bg-gradient-rose">
-                            <div class="recipe-badge">Jantar Terapêutico</div>
-                            <div class="recipe-graphic-icon">
-                                <i data-lucide="fish"></i>
-                            </div>
-                            <div class="recipe-time-tag"><i data-lucide="clock"></i> 25 min</div>
-                        </div>
-                        <div class="recipe-content">
-                            <span class="recipe-cat-text">Prato Principal • Ômega-3</span>
-                            <h3 class="recipe-title">Salmão em Crosta de Ervas e Purê Dourado</h3>
-                            <p class="recipe-summary">Salmão grelhado com alecrim e azeite extravirgem acompanhado de purê cremoso de cabotiá com toque de noz-moscada.</p>
-                            <div class="recipe-card-footer">
-                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Recipe 5: Golden Milk -->
-                    <div class="recipe-card" data-category="caldos" onclick="openRecipeModal(5)">
-                        <div class="recipe-image-wrap bg-gradient-gold">
-                            <div class="recipe-badge">Noturno / Conforto</div>
-                            <div class="recipe-graphic-icon">
-                                <i data-lucide="moon"></i>
-                            </div>
-                            <div class="recipe-time-tag"><i data-lucide="clock"></i> 5 min</div>
-                        </div>
-                        <div class="recipe-content">
-                            <span class="recipe-cat-text">Leite Dourado • Relaxante</span>
-                            <h3 class="recipe-title">Creme Dourado (Golden Milk)</h3>
-                            <p class="recipe-summary">Bebida ayurvédica de leite vegetal de coco, cúrcuma, canela, noz-moscada e pimenta preta para induzir o relaxamento profundo.</p>
-                            <div class="recipe-card-footer">
-                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Recipe 6: Salada Detox -->
-                    <div class="recipe-card" data-category="pratos" onclick="openRecipeModal(6)">
-                        <div class="recipe-image-wrap bg-gradient-sage">
-                            <div class="recipe-badge">Almoço Fresco</div>
-                            <div class="recipe-graphic-icon">
-                                <i data-lucide="salad"></i>
-                            </div>
-                            <div class="recipe-time-tag"><i data-lucide="clock"></i> 10 min</div>
-                        </div>
-                        <div class="recipe-content">
-                            <span class="recipe-cat-text">Salada • Fibras Vivas</span>
-                            <h3 class="recipe-title">Salada Anti-inflamatória com Molho Tahine</h3>
-                            <p class="recipe-summary">Mix de folhas verdes, sementes de abóbora tostadas, abacate em cubos, romã e molho cremoso de gergelim (tahine) e limão siciliano.</p>
-                            <div class="recipe-card-footer">
-                                <span class="rc-btn-text">Ver Modo de Preparo <i data-lucide="chevron-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
