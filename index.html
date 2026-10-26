@@ -18,6 +18,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-surface">
+    <!-- Intro Video Overlay -->
+    <div id="intro-video" class="intro-video" role="dialog" aria-label="Vídeo de boas-vindas" hidden>
+        <video id="intro-video-el" class="intro-video-el" poster="hero_poster.jpg" preload="metadata" muted playsinline></video>
+        <div class="intro-video-bar">
+            <button id="intro-sound" class="intro-btn" type="button" aria-label="Ativar som">🔇 Ativar som</button>
+            <button id="intro-skip" class="intro-btn intro-btn-primary" type="button">Pular e acessar o site →</button>
+        </div>
+    </div>
+    <script>
+    (function () {
+        var box = document.getElementById('intro-video');
+        var v = document.getElementById('intro-video-el');
+        var s = document.getElementById('intro-sound');
+        function label() { s.textContent = v.muted ? '🔇 Ativar som' : '🔊 Som ligado'; }
+        function close() {
+            localStorage.setItem('introSeen', '1');
+            v.pause(); v.removeAttribute('src'); v.load();
+            box.classList.add('closing');
+            document.documentElement.style.overflow = '';
+            setTimeout(function () { box.hidden = true; }, 400);
+        }
+        // userClick=true (replay): pode tocar com som
+        window.openIntroVideo = function (userClick) {
+            box.classList.remove('closing');
+            box.hidden = false;
+            document.documentElement.style.overflow = 'hidden';
+            v.controls = false;
+            v.muted = !userClick;
+            label();
+            v.src = 'hero_video_hq.mp4';
+            v.play().catch(function () { v.muted = true; label(); v.play().catch(function () { v.controls = true; }); });
+        };
+        v.addEventListener('ended', close);
+        document.getElementById('intro-skip').onclick = close;
+        s.onclick = function () { v.muted = !v.muted; label(); v.play(); };
+        if (!localStorage.getItem('introSeen')) window.openIntroVideo(false);
+    })();
+    </script>
     <!-- App Container -->
     <div id="app-wrapper" class="app-wrapper">
         
@@ -87,6 +125,10 @@
                                 <button class="btn-hero-secondary" onclick="navigateTo('cardapio')">
                                     <i data-lucide="book-open"></i>
                                     <span>Ver Cardápio da Semana</span>
+                                </button>
+                                <button class="btn-hero-secondary" type="button" onclick="openIntroVideo(true)">
+                                    <i data-lucide="play"></i>
+                                    <span>Assistir Vídeo de Boas-vindas</span>
                                 </button>
                             </div>
                         </div>
